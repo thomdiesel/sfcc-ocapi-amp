@@ -1,0 +1,18 @@
+<div class="card collapsable-sm refinement refinement-color">
+  <div class="card-header">
+    {{label}}
+  </div>
+  <div class="card-block">
+    <ul class="values content">
+      {{#each values}}
+        <li title="{{isRefinedByAttributeValue .. value 'Refined' 'Refine'}} by {{../label}}: {{label}}" class="color-attribute">
+          <a href="{{toggleRefinementValueUrl .. value}}">
+            <span class="swatch-circle-{{presentation_id}}
+              swatch-circle color-value swatch-mark {{isRefinedByAttributeValue .. value 'selected'}}
+              {{#if (eq hit_count 0)}}disabled{{/if}}"></span>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

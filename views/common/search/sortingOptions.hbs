@@ -1,0 +1,7 @@
+<select name="sort-order" class="custom-select" onChange="window.location.href = this.options[this.selectedIndex].value">
+  {{#each sorting_options}}
+    <option value="{{productSearchSortingUrl id}}" data-id="{{id}}" {{isSortedBy id 'selected'}}>
+      {{label}}
+    </option>
+  {{/each}}
+</select>

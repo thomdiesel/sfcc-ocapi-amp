@@ -1,0 +1,235 @@
+@import "variables";
+@import "lib/bootstrap/variables";
+@import "lib/bootstrap/mixins/breakpoints";
+@import "utilities/delete-card-button";
+
+$spacer: 0.625em;
+$negative-spacer: -0.625rem;
+
+.single-approaching-discount {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: $white;
+    color: $brand-success;
+    margin-bottom: 0.3125rem;
+}
+
+.checkout-continue {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    padding-right: 0;
+    padding-left: 0;
+
+    @include media-breakpoint-down(xs) {
+        div {
+            padding: $spacer;
+            background-color: $white;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        position: static;
+        padding-right: 0.938em;
+        padding-left: 0.938em;
+    }
+}
+
+.edit {
+    margin-right: 0.625em;
+}
+
+.edit-add-to-wishlist {
+    position: absolute;
+    bottom: 0;
+
+    a {
+        font-size: 0.813em;
+    }
+}
+
+.line-item-attributes {
+    font-size: 0.813em;
+    margin: 0;
+    height: 100%;
+}
+
+.item-attributes {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.625em;
+}
+
+.line-item-divider {
+    margin-top: $spacer;
+    margin-bottom: $spacer;
+}
+
+.line-item-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1em;
+    color: $darker-gray;
+    font-weight: bold;
+    margin-bottom: $spacer;
+}
+
+.line-item-price {
+    font-size: 1em;
+    color: $darker-gray;
+    font-weight: bold;
+}
+
+.line-item-price-info {
+    font-size: 0.75em;
+    margin-bottom: 0.5rem;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.number-of-items {
+    margin-top: 1rem;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 0;
+    }
+}
+
+.optional-promo {
+    color: $brand-color;
+}
+
+.product-info {
+    margin-bottom: 0.313em;
+    padding: $spacer;
+
+    @include media-breakpoint-up(md) {
+        height: auto;
+    }
+}
+
+.product-to-remove {
+    font-weight: bold;
+}
+
+.product-image {
+    height: 5.625em;
+    width: 5.625em;
+}
+
+.promo-code-form {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+        display: block;
+    }
+}
+
+.promo-code-submit {
+    padding-left: 0;
+}
+
+.quantity-form {
+    margin-bottom: 0;
+    margin-top: -0.313em;
+}
+
+.product-info {
+    .remove-btn {
+        color: $slightly-darker-gray;
+        font-size: 1.625em;
+        padding: 0;
+        position: absolute;
+        top: $negative-spacer;
+        right: 1.25rem;
+        border: none;
+        background-color: $white;
+
+        @include media-breakpoint-up(lg) {
+            top: 0;
+            bottom: 0;
+            right: $negative-spacer;
+            margin-top: $negative-spacer;
+            margin-bottom: $negative-spacer;
+        }
+    }
+
+    .remove-btn-lg {
+        @include delete-card-button();
+
+        padding-left: 0.3125rem;
+        padding-right: 0.3125rem;
+        z-index: 1;
+    }
+}
+
+.remove-line-item {
+    position: relative;
+}
+
+.remove-coupon {
+    border: none;
+    background: transparent;
+}
+
+.sub-total {
+    font-weight: bold;
+}
+
+.grand-total {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.coupon-price-adjustment + .coupon-price-adjustment {
+    margin-top: 0.625rem;
+}
+
+.coupon-price-adjustment {
+    background-color: $white;
+    padding: 0.625em;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.1875rem;
+}
+
+.coupon-promotion-relationship {
+    font-size: 0.813em;
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+
+.coupons-and-promos {
+    margin-bottom: 0.625rem;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.coupon-code {
+    font-size: 1.125em;
+}
+
+.coupon-applied {
+    color: $brand-success;
+    font-size: 0.813em;
+}
+
+.coupon-not-applied {
+    color: $brand-danger;
+    font-size: 0.813em;
+}
+
+.coupon-missing-error {
+    display: none;
+}
+
+.applied-promotion-discount {
+    color: $brand-success;
+    float: right;
+}
+
+.promotion-information {
+    margin-bottom: 0.625rem;
+    margin-top: 0.625rem;
+}

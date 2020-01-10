@@ -1,0 +1,156 @@
+{{#with product}}
+  <div class="{{containerClass}} product-detail">
+    <div class="product-breadcrumb hidden-md-up">
+      <div class="row hidden-xs-down">
+        <div class="col">
+          {{{productBreadcrumb}}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="hidden-md-up col-sm-12">
+        <h1 class="product-name">{{name}}</h1>
+      </div>
+    </div>
+
+    {{> product/images}}
+
+    <!-- Product Name and Number -->
+    <div class="col-12 col-sm-6">
+      <section>
+        <div class="product-breadcrumb hidden-sm-down">
+          <div class="row hidden-xs-down">
+            <div class="col">
+              {{{productBreadcrumb}}}
+            </div>
+          </div>
+        </div>
+
+        <h1 class="product-name hidden-sm-down">{{name}}</h1>
+
+        <div class="product-number-rating clearfix">
+          <div class="product-number hidden-xs-down pull-left">
+            Item No. <span class="product-id">{{id}}</span>
+          </div>
+          <div class="ratings pull-right">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+          </div>
+        </div>
+      </section>
+
+        <!-- Attributes -->
+        <section class="attributes {{containerClass}}">
+          <div class="row justify-content-center">
+            <div class="col-md-10 col-12">
+              <div class="main-attributes">
+              </div>
+
+              {{#each variation_attributes}}
+                <div data-attr="{{id}}" class="swatch">
+                  {{#if @last}}
+                    {{> product/quantity}}
+                  {{/if}}
+                  {{#if (eq id 'color')}}
+                    {{> product/swatchVariation}}
+                  {{else}}
+                    {{> product/productVariation}}
+                  {{/if}}
+                </div>
+              {{else}}
+                {{> product/quantity}}
+              {{/each}}
+            </div>
+
+            <!-- Size Chart -->
+            <div class="size-chart col-md-10 col-12">
+              <a href="#" class="size-chart">Size Chart</a>
+            </div>
+
+            <!-- Availability -->
+            <div class="availability col-md-10 col-12">
+              <div class="availability-label">
+                Availability:
+              </div>
+              <div class="availability-msg">
+                Select Styles for Availability
+              </div>
+            </div>
+
+            <!-- Applicable Promotions -->
+            <div class="promotions col-md-10 col-12">
+            </div>
+
+            <div class="col-md-10 col-12">
+              <hr>
+            </div>
+
+            <div class="col-12 prices-add-to-cart-actions">
+              <!-- Prices -->
+              <div class="prices">
+                <div class="price">
+                  <span>
+                    <span class="sales">
+                      <span class="value">{{formatCurrency price}}</span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Cart and [Optionally] Apple Pay -->
+              <div class="row cart-and-ipay">
+                <div class="col-sm-12">
+                  <form method="get" action="{{addToCartUrl @root.product.id}}">
+                  <input type="hidden" name="addToCartUrl" value="{{addToCartUrl @root.product.id}}">
+                    <button type="submit" class="add-to-cart btn btn-primary" {{#if (isMaster @root.product)}}disabled{{/if}}>
+                      <i class="fa fa-shopping-bag"></i>
+                      Add to Cart
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add to Wishlist and Social Sharing Icons -->
+            <div class="col-12 wishlist-social hidden-sm-down">
+              <a href="#" class="add-to-wish-list col-md-6">Add to Wishlist</a>
+              <span class="social-icons col-md-6">
+                <i class="fa fa-pinterest" alt="Pinterest"></i>
+                <i class="fa fa-instagram" alt="Instagram"></i>
+                <i class="fa fa-facebook-official" alt="Facebook"></i>
+                <i class="fa fa-twitter" alt="Twitter"></i>
+              </span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-and-detail">
+      <div class="row product-attributes collapsable-xs">
+      </div>
+
+      <div class="row description collapsable-xs ">
+        <h2 class="col-sm-12 col-md-4 col-lg-3 title">Description</h2>
+
+        <div class="col-sm-12 col-md-8 col-lg-9 value content">
+          {{short_description}}
+        </div>
+      </div>
+
+      <hr class="hidden-sm-up">
+
+      <div class="row details collapsable-xs ">
+        <h2 class="col-sm-12 col-md-4 col-lg-3 title">Details</h2>
+
+        <div class="col-sm-12 col-md-8 col-lg-9 value content">
+          {{{long_description}}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{/with}}

@@ -1,0 +1,18 @@
+<div class="attribute">
+  <!-- Select <Attribute> Label -->
+  <label class="{{id}}">
+    Select {{name}}
+  </label>
+
+  <!-- Attribute Values Drop Down Menu -->
+  <select class="custom-select form-control select-{{../id}}">
+    <option value="{{ productUrl @root.product.id}}">
+      Select {{name}}
+    </option>
+    {{#each values}}
+      <option value="{{productUrl @root.product.id}}&dwvar_{{@root.product.id}}_{{../id}}={{value}}" data-attr-value="{{value}}">
+        {{name}}
+      </option>
+    {{/each}}
+  </select>
+</div>

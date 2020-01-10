@@ -1,0 +1,21 @@
+{{#if (gt values.length 1)}}
+  <div class="card collapsable-sm refinement refinement-{{attribute_id}}">
+    <div class="card-header">
+      {{label}}
+    </div>
+    <div class="card-block">
+      <ul class="values content">
+        {{#each values}}
+          <li title="{{isRefinedByAttributeValue .. value 'Refined' 'Refine'}} by {{../label}}: {{label}}" class="col-sm-2 col-md-12">
+            <a href="{{toggleRefinementValueUrl .. value}}">
+              <span class="{{#if (eq hit_count 0)}}disabled{{/if}}">
+                <i class="fa {{isRefinedByAttributeValue .. value 'fa-check-square' 'fa-square-o'}}"></i>
+                {{label}}
+              </span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+{{/if}}

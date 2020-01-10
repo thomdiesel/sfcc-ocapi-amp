@@ -1,0 +1,31 @@
+<div class="row">
+<!-- Product Images Carousel -->
+<div class="primary-images col-12 col-sm-6">
+  <div id="pdpCarousel" class="carousel slide" data-interval="0">
+    <ol class="carousel-indicators">
+      {{#each image_groups.0.images}}
+        <li data-target="#pdpCarousel" data-slide-to="{{@index}}" {{#if @first}}class="active"{{/if}}>
+        </li>
+      {{/each}}
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      {{#each image_groups.0.images}}
+        <div class="carousel-item {{#if @first}}active{{/if}}">
+          <img src="{{link}}" class="d-block img-fluid" alt="{{alt}}">
+        </div>
+      {{/each}}
+    </div>
+
+    {{#if (gt image_groups.0.images.length 1)}}
+      <a class="carousel-control-prev" href="#pdpCarousel" role="button" data-slide="prev">
+        <span class="fa icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#pdpCarousel" role="button" data-slide="next">
+        <span class="fa icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+@import "../variables";
+@import "../checkout/checkoutComponents";
+@import "../lib/bootstrap/variables";
+@import "../lib/bootstrap/mixins/breakpoints";
+
+.section-label {
+    font-size: $receipt-font-size;
+    font-weight: bolder;
+}
+
+.my-account {
+    text-align: center;
+    margin-bottom: 0.938em;
+}

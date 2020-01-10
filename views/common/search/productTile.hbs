@@ -1,0 +1,56 @@
+<div class="product-tile">
+  <div class="image-container">
+    <a href="{{productUrl product_id}}">
+      <img class="tile-image" src="{{image.link}}"
+        alt="{{image.alt}}" title="{{image.title}}">
+    </a>
+
+    <a class="quickview hidden-sm-down" href="{{productUrl product_id}}">
+      <img src="/images/quickview.png" alt="quickview" title="quickview">
+    </a>
+  </div>
+
+  <div class="tile-body">
+    {{#each variation_attributes}}
+      {{#if (eq id 'color')}}
+        <div class="color-swatches">
+          <div class="swatches">
+            {{#each values}}
+              <a href="{{productUrl ../../product_id}}&dwvar_{{../../product_id}}_color={{value}}">
+                <span>
+                  <img class="swatch swatch-circle"
+                    data-index="{{@index}}" data-image-url="{{image.link}}"
+                    alt="{{image_swatch.alt}}"
+                    title="{{image_swatch.title}}"
+                    style="background-image: url({{image_swatch.link}})"
+                    src="{{image_swatch.link}}">
+                </span>
+              </a>
+            {{/each}}
+        </div>
+        </div>
+      {{/if}}
+    {{/each}}
+
+    <div class="pdp-link">
+      <a class="link" href="{{productUrl product_id}}">{{product_name}}</a>
+    </div>
+
+    <div class="price">
+      <span>
+        <span class="sales">
+          <span class="value">{{formatCurrency price code=@root.site.default_currency}}</span>
+        </span>
+      </span>
+    </div>
+
+    <div class="reviews-compare">
+      <div class="col-12">
+        <div class="row">
+          <div class="reviews col-xs-12 col-md-6">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

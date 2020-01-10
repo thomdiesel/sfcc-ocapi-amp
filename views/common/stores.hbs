@@ -1,0 +1,91 @@
+<div class="jumbotron map-canvas" data-has-google-api="false" data-locations="[{&quot;name&quot;:&quot;Demandware&quot;,&quot;latitude&quot;:42.5273334,&quot;longitude&quot;:-71.13758250000001},{&quot;name&quot;:&quot;Champaign Electronic Shop&quot;,&quot;latitude&quot;:42.3729794,&quot;longitude&quot;:-71.09346089999997}]">
+  <div class="container">
+    <div class="row">
+      <p class="store-locator-no-apiKey alert alert-danger" style="display: block;">Please obtain a google maps api key and put it in Site Preferences!</p>
+    </div>
+  </div>
+</div>
+
+<div class="hero store-locator-hero">
+  <h1 class="page-title">Find a store</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-block">
+          <p>The Store Locator is designed to help you find the closest store near you.</p>
+          <button type="submit" class="btn btn-primary btn-block btn-lg detect-location" data-action="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Stores-FindStores">
+            Detect my location
+          </button>
+
+          <form action="{{storesUrl}}" class="store-locator" method="get" name="storelocator">
+            <input type="hidden" name="country_code" value="US">
+            <input type="hidden" name="max_distance" value="10">
+            <input type="hidden" name="distance_unit" value="mi">
+            <input type="hidden" name="latitude" value>
+            <input type="hidden" name="longitude" value>
+
+            <div class="form-group">
+              <label for="postal-code">ZIP Code or Postal Code</label>
+              <input type="text" class="form-control" id="postal-code" name="postal_code">
+            </div>
+
+            <button class="btn btn-block btn-storelocator-search" type="submit" name="submit" value="">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card results-card">
+        <div class="card-header">
+          <label for="radius">Radius</label>
+          <select class="form-control custom-select radius" id="radius" name="radius" data-action="/stores">
+            <option>15</option>
+            <option>30</option>
+            <option>50</option>
+            <option>100</option>
+            <option>300</option>
+          </select>
+        </div>
+
+        <div class="card-block store-locator-no-results">
+          <p class="alert alert-danger">We're sorry, we couldn't find results for your search.</p>
+        </div>
+
+        {{#with stores}}
+          <div class="results" data-search-key="{&quot;lat&quot;:{{latitude}},&quot;long&quot;:{{longitude}}" data-radius="15.0" data-has-results="{{total}}">
+            {{#each data}}
+              <div class="card-block store">
+                <i class="fa fa-map-marker map-marker"></i>
+                <div class="store-details">
+                  <div class="store-name">{{name}}</div>
+                  <address>
+                    <a class="store-map" href="https://maps.google.com/?daddr={{latitude}},{{longitude}}">
+                      {{address1}} {{city}}, {{state_code}} {{postal_code}} {{country_code}}
+                    </a>
+                    <div class="store-hours">
+                      {{{store_hours}}}
+                    </div>
+                    <p>
+                      {{#if phone}}
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>
+                          <a class="storelocator-phone" href="tel:{{phone}}">{{phone}}</a>
+                        </span>
+                      {{/if}}
+                    </p>
+                  </address>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+</div>

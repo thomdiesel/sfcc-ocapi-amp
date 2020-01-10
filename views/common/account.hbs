@@ -1,0 +1,162 @@
+<div class="hero slant-down account-image">
+  <h1 class="page-title">Dashboard</h1>
+</div>
+
+<div class="{{containerClass}}">
+  <div class="row hidden-xs-down">
+    <div class="col">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{homeUrl}}">
+            Home
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          My Account
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    {{#with customer}}
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header clearfix">
+            <h4 class="pull-left">Profile</h4>
+            <a href="{{profileUrl}}" class="pull-right">Edit</a>
+          </div>
+          <div class="card-block">
+            <div>
+              <dt>First Name</dt>
+              <dd>{{first_name}}</dd>
+            </div>
+            <div>
+              <dt>Last Name</dt>
+              <dd>{{last_name}}</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd>{{email}}</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd>{{phone_home}}</dd>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header clearfix">
+            <h4 class="pull-left">Password</h4>
+            <a href="{{changePasswordUrl}}" class="pull-right">Edit</a>
+          </div>
+          <div class="card-block">
+            <div>
+              <dt class="dashboard-info">Password</dt>
+              <dd>********</dd>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header clearfix">
+            <h4 class="pull-left">Address Book</h4>
+
+            <a href="{{addressBookUrl}}" class="pull-right">View</a>
+          </div>
+
+          {{#each addresses}}
+            <div class="card-block">
+              <div>
+                {{#if preferred}}
+                  <div class="dashboard-cards-block-title">Default Address</div>
+                {{/if}}
+                <dt class="dashboard-info">{{address_id}}</dt>
+                <div>{{full_name}}</div>
+                <div>{{address1}}</div>
+                {{#if address2}}
+                  <div>{{address2}}</div>
+                {{/if}}
+                <div>{{city}}, {{state_code}} {{postal_code}}</div>
+                <div>{{phone}}</div>
+              </div>
+            </div>
+          {{/each}}
+
+          <div class="card-footer card-footer-border text-center">
+            <a href="{{addAddressUrl}}" class="card-link">Add New</a>
+          </div>
+        </div>
+      </div>
+    {{/with}}
+
+    <div class="col-sm-6">
+      {{#with order_history}}
+        {{#if (gt total 0)}}
+          <div class="card">
+            <div class="card-header clearfix">
+              <h4 class="pull-left">Order History</h4>
+              <a href="{{orderHistoryUrl}}" class="pull-right">View</a>
+            </div>
+            {{#each data}}
+              {{#if @last}}
+                <div class="card-block card-info-group">
+                  <div class="row">
+                    <div class="col-12">
+                      Most Recent Order
+                    </div>
+                    <div class="col-4 hidden-xs-down">
+                      <img class="img-fluid" src="//dev01-instore-dw.demandware.net/on/demandware.static/-/Sites-apparel-catalog/default/dwa9620be0/images/small/PG.15J0037EJ.SLABLFB.PZ.jpg" alt="No-Iron Textured Dress Shirt, Slate, small" title="No-Iron Textured Dress Shirt, Slate">
+                    </div>
+                    <div class="col-sm-8 col-12">
+                      <p>Order Number: 00002204</p>
+                      <p>Date Ordered: 4/20/17</p>
+                      <p>Order Status: <span class="dashboard-order-card-status">NEW</span></p>
+                      <p>Shipped to: Peter Pritchard</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col-9 dashboard-order-card-footer-columns card-info-group">
+                      <p>Total items</p>
+                      <p class="dashboard-order-card-footer-value">
+                        2
+                      </p>
+                    </div>
+                    <div class="col-3 dashboard-order-card-footer-columns card-info-group">
+                      <p>Total </p>
+                      <p class="dashboard-order-card-footer-value">
+                        $104.97
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+            {{/each}}
+          </div>
+        {{/if}}
+      {{/with}}
+
+      <div class="card">
+        <div class="card-header clearfix">
+          <h4 class="pull-left">Payment</h4>
+          <a href="{{walletUrl}}" class="pull-right">View</a>
+        </div>
+        {{#each customer.payment_instruments}}
+          <div class="card-block card-info-group">
+            {{#with payment_card}}
+              <p>Credit {{card_type}}</p>
+              <p>{{masked_number}}</p>
+              <p>Expires {{expiration_month}}/{{expiration_year}}</p>
+            {{/with}}
+          </div>
+        {{/each}}
+        <div class="card-footer card-footer-border text-center">
+          <a href="{{addPaymentUrl}}" class="card-link">Add New</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

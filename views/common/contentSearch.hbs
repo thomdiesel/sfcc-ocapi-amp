@@ -1,0 +1,65 @@
+<div class="hero slant-down search-banner">
+  <h1 class="header page-title">
+    Content Search
+  </h1>
+</div>
+
+<div class="{{@root.app.containerClass}} search-results">
+  <div class="row search-nav">
+    <div class="nav-tabs-wrapper">
+      <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item">
+          <a class="nav-link product-search" href="#product-search-results" data-toggle="tab" role="tab" aria-expanded="false">
+            Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link content-search active" href="#content-search-results-pane" data-toggle="tab" role="tab" aria-expanded="true"
+            data-url="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Search-Content?q=terms&amp;startingPage=0">
+            Articles
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="tab-content col-12">
+      <div class="tab-pane {{@root.app.containerClass}}" id="product-search-results" role="tabpanel" aria-expanded="false">
+        <div class="row grid-header justify-content-center">
+          <div class="result-count col-10 col-sm-4">
+            <span>
+              We are sorry, but no results were found for:
+            </span>
+            <span class="search-keywords">
+                terms
+            </span>
+            <div class="search-tips">
+              <h5>Search Tips</h5>
+              <ul>
+                <li>Double-check the spelling</li>
+                <li>Change your search query</li>
+                <li>Be less specific</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane {{@root.app.containerClass}} active" id="content-search-results-pane" role="tabpanel" aria-expanded="true">
+        <div id="content-search-results" class="row content-grid-header justify-content-center">
+          <div class="result-count col-sm-8 col-sm-6 col-12">
+            <div class="text-center">
+              {{total}} Results for
+              <span class="search-keywords">
+                terms
+              </span>
+            </div>
+            {{#each hits}}
+              {{> search/contentTile}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

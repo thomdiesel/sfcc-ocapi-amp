@@ -1,0 +1,1746 @@
+<div id="checkout-main" class="container data-checkout-stage " data-checkout-stage="shipping">
+
+  <!-- Help and Phone -->
+  <div class="row hidden-xs-down">
+    <div class="col-12 col-sm-5 offset-sm-7 col-md-5 offset-md-7">
+      <div class="text-center">
+        <span>Need Help? Call</span>
+        <span><a href="tel:1-800-555-0199">1-800-555-0199</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row hidden-sm-up">
+    <div class="col-12">
+      <span class="grand-total-label">1 Items</span>
+      <span class="grand-total-price">$49.00</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-7">
+
+      <!-- Checkout Forms: Shipping, Payment, Coupons, Billing, etc -->
+      <div class="alert alert-danger alert-dismissible fade in error-message" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <p class="error-message-text"></p>
+      </div>
+
+      <!-- Step 1: Shipping -->
+      <div class="shipping-form">
+        <div class="card">
+          <div class="card-header">
+            <h4>Shipping</h4>
+          </div>
+
+          <div class="card-block form-nav shipping-nav">
+            <ul class="nav nav-tabs nav-fill single-shipping" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link shipping-tab active" data-toggle="tab" href="#shipping-address" role="tab">Shipping</a>
+              </li>
+              <li class="nav-item disable">
+                <a class="nav-link shipping-tab" data-toggle="tab" href="#pick-up-in-store" role="tab">Pick up in store</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="container single-shipping">
+            <div class="tab-content">
+
+              <div class="tab-pane active card-block" id="shipping-address" role="tabpanel">
+                <form autocomplete="on" method="POST" action="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-SubmitShipping"
+                  class="address" name="dwfrm_shipping" id="dwfrm_shipping">
+                  <input name="shipmentUUID" type="hidden" value="16bb5d16fa8207dc4d3e429098">
+                  <fieldset>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group required dwfrm_shipping_shippingAddress_addressFields_firstName">
+                          <label class="form-control-label" for="shippingFirstName">
+                            First Name
+                          </label>
+                          <input autofocus="" type="text" class="form-control shippingFirstName" id="shippingFirstName" value="" name="dwfrm_shipping_shippingAddress_addressFields_firstName"
+                            required="" maxlength="50" autocomplete="given-name">
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group required dwfrm_shipping_shippingAddress_addressFields_lastName">
+                          <label class="form-control-label" for="shippingLastName">
+                              Last Name
+                          </label>
+                          <input type="text" class="form-control shippingLastName" id="shippingLastName" value="" name="dwfrm_shipping_shippingAddress_addressFields_lastName"
+                            required="" maxlength="50" autocomplete="family-name">
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group required dwfrm_shipping_shippingAddress_addressFields_address1">
+                          <label class="form-control-label" for="shippingAddressOne">
+                            Address 1
+                          </label>
+                          <input type="text" class="form-control shippingAddressOne" id="shippingAddressOne" value="" name="dwfrm_shipping_shippingAddress_addressFields_address1"
+                            required="" maxlength="50" autocomplete="shipping address-line1">
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group dwfrm_shipping_shippingAddress_addressFields_address2">
+                          <label class="form-control-label" for="shippingAddressTwo">
+                            Address 2
+                          </label>
+                          <input type="text" class="form-control shippingAddressTwo" id="shippingAddressTwo" value="" name="dwfrm_shipping_shippingAddress_addressFields_address2"
+                            maxlength="50" autocomplete="shipping address-line2">
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group required dwfrm_shipping_shippingAddress_addressFields_country">
+                          <label class="form-control-label" for="shippingCountry">
+                            Country
+                          </label>
+                          <select class="form-control shippingCountry" id="shippingCountry" name="dwfrm_shipping_shippingAddress_addressFields_country"
+                            required="" value="" maxlength="2147483647" autocomplete="shipping country">
+                            <option id="us">United States</option>
+                          </select>
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group required dwfrm_shipping_shippingAddress_addressFields_states_stateCode">
+                          <label class="form-control-label" for="shippingState">
+                          State
+                        </label>
+                        <select class="form-control shippingState" id="shippingState" name="dwfrm_shipping_shippingAddress_addressFields_states_stateCode"
+                          required="" value="" maxlength="2147483647" autocomplete="shipping region">
+                    
+                        <option id=""></option>
+                        <option id="AL">AL</option>
+                    
+                        <option id="AK">AK</option>
+                    
+                        <option id="AS">AS</option>
+                    
+                        <option id="AZ">AZ</option>
+                    
+                        <option id="AR">AR</option>
+                    
+                        <option id="CA">CA</option>
+                    
+                        <option id="CO">CO</option>
+                    
+                        <option id="CT">CT</option>
+                    
+                        <option id="DE">DE</option>
+                    
+                        <option id="DC">DC</option>
+                    
+                        <option id="FL">FL</option>
+                    
+                        <option id="GA">GA</option>
+                    
+                        <option id="GU">GU</option>
+                    
+                        <option id="HI">HI</option>
+                    
+                        <option id="ID">ID</option>
+                    
+                        <option id="IL">IL</option>
+                    
+                        <option id="IN">IN</option>
+                    
+                        <option id="IA">IA</option>
+                    
+                        <option id="KS">KS</option>
+                    
+                        <option id="KY">KY</option>
+                    
+                        <option id="LA">LA</option>
+                    
+                        <option id="ME">ME</option>
+                    
+                        <option id="MD">MD</option>
+                    
+                        <option id="MA">MA</option>
+                    
+                        <option id="MI">MI</option>
+                    
+                        <option id="MN">MN</option>
+                    
+                        <option id="MS">MS</option>
+                    
+                        <option id="MO">MO</option>
+                    
+                        <option id="MT">MT</option>
+                    
+                        <option id="NE">NE</option>
+                    
+                        <option id="NV">NV</option>
+                    
+                        <option id="NH">NH</option>
+                    
+                        <option id="NJ">NJ</option>
+                    
+                        <option id="NM">NM</option>
+                    
+                        <option id="NY">NY</option>
+                    
+                        <option id="NC">NC</option>
+                    
+                        <option id="ND">ND</option>
+                    
+                        <option id="OH">OH</option>
+                    
+                        <option id="OK">OK</option>
+                    
+                        <option id="OR">OR</option>
+                    
+                        <option id="PA">PA</option>
+                    
+                        <option id="PR">PR</option>
+                    
+                        <option id="RI">RI</option>
+                    
+                        <option id="SC">SC</option>
+                    
+                        <option id="SD">SD</option>
+                    
+                        <option id="TN">TN</option>
+                    
+                        <option id="TX">TX</option>
+                    
+                        <option id="UT">UT</option>
+                    
+                        <option id="VT">VT</option>
+                    
+                        <option id="VI">VI</option>
+                    
+                        <option id="VA">VA</option>
+                    
+                        <option id="WA">WA</option>
+                    
+                        <option id="WV">WV</option>
+                    
+                        <option id="WI">WI</option>
+                    
+                        <option id="WY">WY</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AA">AA</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AP">AP</option>
+                    
+                        <option id="OTHER">OTHER</option>
+                    
+            </select>
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group
+        required
+            dwfrm_shipping_shippingAddress_addressFields_city">
+                          <label class="form-control-label" for="shippingAddressCity">
+                City
+            </label>
+                          <input type="text" class="form-control shippingAddressCity" id="shippingAddressCity" value="" name="dwfrm_shipping_shippingAddress_addressFields_city"
+                            required="" maxlength="50" minlength="2" autocomplete="shipping locality">
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_postalCode">
+                          <label class="form-control-label" for="shippingZipCode">
+                ZIP Code
+            </label>
+                          <input type="text" class="form-control shippingZipCode" id="shippingZipCode" value="" name="dwfrm_shipping_shippingAddress_addressFields_postalCode"
+                            required="" maxlength="10" minlength="5" pattern="(^\d{5}(-\d{4})?$)|(^[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)"
+                            autocomplete="shipping postal-code">
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_phone">
+                          <label class="form-control-label" for="shippingPhoneNumber">
+                Phone Number
+            </label>
+                          <input type="tel" class="form-control shippingPhoneNumber" id="shippingPhoneNumber" value="" name="dwfrm_shipping_shippingAddress_addressFields_phone"
+                            required="" maxlength="20" minlength="10" autocomplete="tel">
+                          <div class="form-control-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </fieldset>
+
+                  <fieldset>
+                    <legend class="shipping-methods">
+                      Shipping Method:
+                    </legend>
+
+                    <div class="row leading-lines shipping-method-list" data-select-shipping-method-url="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-SelectShippingMethod"
+                      data-action-url="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-UpdateShippingMethodsList">
+                      <input name="shipmentUUID" type="hidden" value="16bb5d16fa8207dc4d3e429098">
+
+                      <div class="form-check col-9 start-lines">
+                        <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-001" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" class="form-check-input" value="001" checked="">
+                
+                <span class="display-name">Ground</span>
+                
+                    <span class="text-muted arrival-time">(7-10 Business Days)</span>
+                
+            </label>
+                      </div>
+                      <div class="col-3 text-right shipping-method-pricing end-lines">
+                        <span class="shipping-cost">$5.99</span>
+                      </div>
+
+                      <div class="form-check col-9 start-lines">
+                        <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-002" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="002" class="form-check-input">
+                
+                <span class="display-name">2-Day Express</span>
+                
+                    <span class="text-muted arrival-time">(2 Business Days)</span>
+                
+            </label>
+                      </div>
+                      <div class="col-3 text-right shipping-method-pricing end-lines">
+                        <span class="shipping-cost">$9.99</span>
+                      </div>
+
+                      <div class="form-check col-9 start-lines">
+                        <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-003" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="003" class="form-check-input">
+                
+                <span class="display-name">Overnight</span>
+                
+                    <span class="text-muted arrival-time">(Next Day)</span>
+                
+            </label>
+                      </div>
+                      <div class="col-3 text-right shipping-method-pricing end-lines">
+                        <span class="shipping-cost">$15.99</span>
+                      </div>
+
+                      <div class="form-check col-9 start-lines">
+                        <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-005" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="005" class="form-check-input">
+                
+                <span class="display-name">Store Pickup</span>
+                
+            </label>
+                      </div>
+                      <div class="col-3 text-right shipping-method-pricing end-lines">
+                        <span class="shipping-cost">$0.00</span>
+                      </div>
+
+                      <div class="form-check col-9 start-lines">
+                        <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-012" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="012" class="form-check-input">
+                
+                <span class="display-name">Express</span>
+                
+                    <span class="text-muted arrival-time">(2-3 Business Days)</span>
+                
+            </label>
+                      </div>
+                      <div class="col-3 text-right shipping-method-pricing end-lines">
+                        <span class="shipping-cost">$16.99</span>
+                      </div>
+
+                      <div class="form-check col-9 start-lines">
+                        <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-021" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="021" class="form-check-input">
+                
+                <span class="display-name">USPS</span>
+                
+                    <span class="text-muted arrival-time">(7-10 Business Days)</span>
+                
+            </label>
+                      </div>
+                      <div class="col-3 text-right shipping-method-pricing end-lines">
+                        <span class="shipping-cost">$5.99</span>
+                      </div>
+
+                    </div>
+
+
+                    <!-- Template used by client to redraw shipping methods                           -->
+
+                    <div id="shipping-method-template" style="display:none;">
+                      <div class="form-check col-9 start-lines">
+                        <label class="form-check-label shipping-method-option">
+            <input type="radio" class="form-check-input">
+            <span class="display-name"></span>
+            <span class="text-muted arrival-time" style="display:none"></span>
+        </label>
+                      </div>
+                      <div class="col-3 text-right shipping-method-pricing end-lines">
+                        <span class="shipping-cost"></span>
+                      </div>
+                    </div>
+
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="form-check" style="display: none">
+                      <label for="shippingAddressUseAsBillingAddress" class="form-check-label checkout-checkbox">
+                            <input class="form-check-input" type="checkbox" value="true" id="shippingAddressUseAsBillingAddress" name="dwfrm_shipping_shippingAddress_shippingAddressUseAsBillingAddress">
+                            Billing and Shipping details are the same
+                        </label>
+                    </div>
+                    <div class="form-check">
+                      <label for="isGift" class="form-check-label checkout-checkbox">
+                            <input class="form-check-input" type="checkbox" value="" id="isGift" name="isGift">
+                            This is a Gift
+                        </label>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+
+              <div class="tab-pane" id="pick-up-in-store" role="tabpanel">
+                <div class="card-block">
+                  Sorry this feature is not implemented yet.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="order-shipping-summary multi-shipping">
+          <div class="product-shipping-block">
+
+
+            <div class="card product-shipment" data-view-mode="enter">
+              <div class="card-header">
+                <div class="product-line-item">
+                  <div class="row product-line-item-name">
+                    <div class="col-lg-12 line-item-name">
+                      <span>Sleeveless Pleated Top.</span>
+                    </div>
+                  </div>
+                  <div class="row product-line-item-details">
+                    <div class="col-lg-12">
+                      <img class="product-image" src="//dev01-instore-dw.demandware.net/on/demandware.static/-/Sites-apparel-catalog/default/dwacbc7e08/images/small/PG.10251227.JJE86XX.PZ.jpg"
+                        alt="Sleeveless Pleated Top., New Coral, small" title="Sleeveless Pleated Top., New Coral">
+                      <div class="item-attributes">
+
+                        <p class="line-item-attributes">Color: New Coral</p>
+
+                        <p class="line-item-attributes">Size: S</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-block">
+                <form autocomplete="on" method="POST" action="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-AddNewAddress" data-address-mode="new"
+                  class="address" name="dwfrm_shipping" id="dwfrm_shipping">
+                  <input name="productLineItemUUID" type="hidden" value="7ca578119f760cc5578cc3736c">
+                  <input name="originalShipmentUUID" type="hidden" value="16bb5d16fa8207dc4d3e429098">
+                  <input name="shipmentUUID" type="hidden" value="16bb5d16fa8207dc4d3e429098">
+
+                  <div class="edit-address-block shipping-address">
+                    <fieldset class="shipment-selector-block">
+                      <div class="form-group">
+                        <label class="form-control-label" for="shipmentSelector">
+                                         Ship To Address
+                                     </label>
+                        <a class="btn float-right btn-show-details">Show Details</a>
+                        <a class="btn float-right btn-hide-details">Hide Details</a>
+
+                        <select name="shipmentSelector" class="addressSelector form-control" data-create-shipment-url="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-CreateNewAddress">
+    <option value="new" data-first-name="" data-last-name="" data-address1="" data-address2="" data-city="" data-state-code="" data-country-code="" data-postal-code="" data-phone="">
+        Add New Shipping Address
+    </option>
+	
+    
+				               					
+</select>
+
+
+                        <div class="form-control-feedback"></div>
+                      </div>
+                    </fieldset>
+
+                    <div class="shipping-address-form">
+                      <fieldset class="shipping-address-block">
+
+
+
+
+
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_firstName">
+                              <label class="form-control-label" for="shippingFirstName">
+                First Name
+
+            </label>
+                              <input autofocus="" type="text" class="form-control shippingFirstName" id="shippingFirstName" value="" name="dwfrm_shipping_shippingAddress_addressFields_firstName"
+                                required="" maxlength="50" autocomplete="given-name">
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_lastName">
+                              <label class="form-control-label" for="shippingLastName">
+                Last Name
+            </label>
+                              <input type="text" class="form-control shippingLastName" id="shippingLastName" value="" name="dwfrm_shipping_shippingAddress_addressFields_lastName"
+                                required="" maxlength="50" autocomplete="family-name">
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_address1">
+                              <label class="form-control-label" for="shippingAddressOne">
+                Address 1
+            </label>
+                              <input type="text" class="form-control shippingAddressOne" id="shippingAddressOne" value="" name="dwfrm_shipping_shippingAddress_addressFields_address1"
+                                required="" maxlength="50" autocomplete="shipping address-line1">
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group
+            
+            dwfrm_shipping_shippingAddress_addressFields_address2">
+                              <label class="form-control-label" for="shippingAddressTwo">
+                Address 2
+            </label>
+                              <input type="text" class="form-control shippingAddressTwo" id="shippingAddressTwo" value="" name="dwfrm_shipping_shippingAddress_addressFields_address2"
+                                maxlength="50" autocomplete="shipping address-line2">
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_country">
+                              <label class="form-control-label" for="shippingCountry">
+                Country
+            </label>
+                              <select class="form-control shippingCountry" id="shippingCountry" name="dwfrm_shipping_shippingAddress_addressFields_country"
+                                required="" value="" maxlength="2147483647" autocomplete="shipping country">
+                    
+                        <option id="us">us</option>
+                    
+            </select>
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_states_stateCode">
+                              <label class="form-control-label" for="shippingState">
+                State
+            </label>
+                              <select class="form-control shippingState" id="shippingState" name="dwfrm_shipping_shippingAddress_addressFields_states_stateCode"
+                                required="" value="" maxlength="2147483647" autocomplete="shipping region">
+                    
+                        <option id=""></option>
+                    
+                        <option id="AL">AL</option>
+                    
+                        <option id="AK">AK</option>
+                    
+                        <option id="AS">AS</option>
+                    
+                        <option id="AZ">AZ</option>
+                    
+                        <option id="AR">AR</option>
+                    
+                        <option id="CA">CA</option>
+                    
+                        <option id="CO">CO</option>
+                    
+                        <option id="CT">CT</option>
+                    
+                        <option id="DE">DE</option>
+                    
+                        <option id="DC">DC</option>
+                    
+                        <option id="FL">FL</option>
+                    
+                        <option id="GA">GA</option>
+                    
+                        <option id="GU">GU</option>
+                    
+                        <option id="HI">HI</option>
+                    
+                        <option id="ID">ID</option>
+                    
+                        <option id="IL">IL</option>
+                    
+                        <option id="IN">IN</option>
+                    
+                        <option id="IA">IA</option>
+                    
+                        <option id="KS">KS</option>
+                    
+                        <option id="KY">KY</option>
+                    
+                        <option id="LA">LA</option>
+                    
+                        <option id="ME">ME</option>
+                    
+                        <option id="MD">MD</option>
+                    
+                        <option id="MA">MA</option>
+                    
+                        <option id="MI">MI</option>
+                    
+                        <option id="MN">MN</option>
+                    
+                        <option id="MS">MS</option>
+                    
+                        <option id="MO">MO</option>
+                    
+                        <option id="MT">MT</option>
+                    
+                        <option id="NE">NE</option>
+                    
+                        <option id="NV">NV</option>
+                    
+                        <option id="NH">NH</option>
+                    
+                        <option id="NJ">NJ</option>
+                    
+                        <option id="NM">NM</option>
+                    
+                        <option id="NY">NY</option>
+                    
+                        <option id="NC">NC</option>
+                    
+                        <option id="ND">ND</option>
+                    
+                        <option id="OH">OH</option>
+                    
+                        <option id="OK">OK</option>
+                    
+                        <option id="OR">OR</option>
+                    
+                        <option id="PA">PA</option>
+                    
+                        <option id="PR">PR</option>
+                    
+                        <option id="RI">RI</option>
+                    
+                        <option id="SC">SC</option>
+                    
+                        <option id="SD">SD</option>
+                    
+                        <option id="TN">TN</option>
+                    
+                        <option id="TX">TX</option>
+                    
+                        <option id="UT">UT</option>
+                    
+                        <option id="VT">VT</option>
+                    
+                        <option id="VI">VI</option>
+                    
+                        <option id="VA">VA</option>
+                    
+                        <option id="WA">WA</option>
+                    
+                        <option id="WV">WV</option>
+                    
+                        <option id="WI">WI</option>
+                    
+                        <option id="WY">WY</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AA">AA</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AP">AP</option>
+                    
+                        <option id="OTHER">OTHER</option>
+                    
+            </select>
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="form-group
+        required
+            dwfrm_shipping_shippingAddress_addressFields_city">
+                              <label class="form-control-label" for="shippingAddressCity">
+                City
+            </label>
+                              <input type="text" class="form-control shippingAddressCity" id="shippingAddressCity" value="" name="dwfrm_shipping_shippingAddress_addressFields_city"
+                                required="" maxlength="50" minlength="2" autocomplete="shipping locality">
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_postalCode">
+                              <label class="form-control-label" for="shippingZipCode">
+                ZIP Code
+            </label>
+                              <input type="text" class="form-control shippingZipCode" id="shippingZipCode" value="" name="dwfrm_shipping_shippingAddress_addressFields_postalCode"
+                                required="" maxlength="10" minlength="5" pattern="(^\d{5}(-\d{4})?$)|(^[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)"
+                                autocomplete="shipping postal-code">
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group
+            required
+            dwfrm_shipping_shippingAddress_addressFields_phone">
+                              <label class="form-control-label" for="shippingPhoneNumber">
+                Phone Number
+            </label>
+                              <input type="tel" class="form-control shippingPhoneNumber" id="shippingPhoneNumber" value="" name="dwfrm_shipping_shippingAddress_addressFields_phone"
+                                required="" maxlength="20" minlength="10" autocomplete="tel">
+                              <div class="form-control-feedback"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </fieldset>
+                      <fieldset class="shipping-method-block">
+                        <h5>Shipping Method</h5>
+
+
+                        <div class="row leading-lines shipping-method-list" data-select-shipping-method-url="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-SelectShippingMethod"
+                          data-action-url="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-UpdateShippingMethodsList">
+                          <input name="shipmentUUID" type="hidden" value="16bb5d16fa8207dc4d3e429098">
+
+                          <div class="form-check col-9 start-lines">
+                            <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-001" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" class="form-check-input" value="001" checked="">
+                
+                <span class="display-name">Ground</span>
+                
+                    <span class="text-muted arrival-time">(7-10 Business Days)</span>
+                
+            </label>
+                          </div>
+                          <div class="col-3 text-right shipping-method-pricing end-lines">
+                            <span class="shipping-cost">$5.99</span>
+                          </div>
+
+                          <div class="form-check col-9 start-lines">
+                            <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-002" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="002" class="form-check-input">
+                
+                <span class="display-name">2-Day Express</span>
+                
+                    <span class="text-muted arrival-time">(2 Business Days)</span>
+                
+            </label>
+                          </div>
+                          <div class="col-3 text-right shipping-method-pricing end-lines">
+                            <span class="shipping-cost">$9.99</span>
+                          </div>
+
+                          <div class="form-check col-9 start-lines">
+                            <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-003" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="003" class="form-check-input">
+                
+                <span class="display-name">Overnight</span>
+                
+                    <span class="text-muted arrival-time">(Next Day)</span>
+                
+            </label>
+                          </div>
+                          <div class="col-3 text-right shipping-method-pricing end-lines">
+                            <span class="shipping-cost">$15.99</span>
+                          </div>
+
+                          <div class="form-check col-9 start-lines">
+                            <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-005" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="005" class="form-check-input">
+                
+                <span class="display-name">Store Pickup</span>
+                
+            </label>
+                          </div>
+                          <div class="col-3 text-right shipping-method-pricing end-lines">
+                            <span class="shipping-cost">$0.00</span>
+                          </div>
+
+                          <div class="form-check col-9 start-lines">
+                            <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-012" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="012" class="form-check-input">
+                
+                <span class="display-name">Express</span>
+                
+                    <span class="text-muted arrival-time">(2-3 Business Days)</span>
+                
+            </label>
+                          </div>
+                          <div class="col-3 text-right shipping-method-pricing end-lines">
+                            <span class="shipping-cost">$16.99</span>
+                          </div>
+
+                          <div class="form-check col-9 start-lines">
+                            <label class="form-check-label shipping-method-option">
+                
+                    <input id="shippingMethod-021" name="dwfrm_shipping_shippingAddress_shippingMethodID" type="radio" value="021" class="form-check-input">
+                
+                <span class="display-name">USPS</span>
+                
+                    <span class="text-muted arrival-time">(7-10 Business Days)</span>
+                
+            </label>
+                          </div>
+                          <div class="col-3 text-right shipping-method-pricing end-lines">
+                            <span class="shipping-cost">$5.99</span>
+                          </div>
+
+                        </div>
+
+
+                        <!-- Template used by client to redraw shipping methods                           -->
+
+                        <div id="shipping-method-template" style="display:none;">
+                          <div class="form-check col-9 start-lines">
+                            <label class="form-check-label shipping-method-option">
+            <input type="radio" class="form-check-input">
+            <span class="display-name"></span>
+            <span class="text-muted arrival-time" style="display:none"></span>
+        </label>
+                          </div>
+                          <div class="col-3 text-right shipping-method-pricing end-lines">
+                            <span class="shipping-cost"></span>
+                          </div>
+                        </div>
+
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="view-address-block">
+
+
+
+                    <h5>Shipping Method</h5>
+                    <p>
+                      <span class="display-name">Ground</span>
+
+                      <span class="text-muted arrival-time">(7-10 Business Days)</span>
+
+                    </p>
+                    <p>
+                      <span class="price">
+            $5.99
+            
+        </span>
+                    </p>
+
+
+                  </div>
+                  <a class="btn btn-outline-primary col-12" data-action="enter">
+                                Enter Address
+                            </a>
+                  <a class="btn btn-outline-primary col-12" data-action="save">
+                                Save
+                            </a>
+                  <a class="btn btn-outline-primary col-12" data-action="edit">
+                                Edit
+                            </a>
+                </form>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="card shipping-summary">
+        <div class="card-header clearfix">
+          <h4 class="pull-left">Shipping</h4>
+          <span class="edit-button pull-right">Edit</span>
+        </div>
+        <div class="card-block">
+
+
+          <div class="single-shipping" data-shipment-summary="16bb5d16fa8207dc4d3e429098">
+
+            <p class="summary-section-label shipping-addr-label">Shipping Address:</p>
+
+
+
+            <div class="summary-details shipping">
+              <div class="address-summary">
+                <div>
+                  <span class="firstName">
+		    
+		</span>
+                  <span class="lastName">
+			
+	    </span>
+                </div>
+
+                <div class="address1">
+
+                </div>
+
+                <div class="address2">
+
+                </div>
+
+                <span class="city">
+	    
+	</span>
+                <span class="stateCode">
+	   
+	</span>
+                <span class="postalCode">
+	   
+	</span>
+              </div>
+
+
+              <div class="shipping-phone"></div>
+
+            </div>
+
+
+            <p class="summary-section-label shipping-method-label">Shipping Method:</p>
+            <div class="row summary-details leading-lines">
+              <div class="col-8 start-lines">
+                <p class="shipping-method">
+                  <span class="shipping-method-title">Ground</span>
+                  <span class="shipping-method-arrival-time">( 7-10 Business Days )</span>
+                </p>
+              </div>
+              <div class="col-4 end-lines">
+                <p class="text-right pricing shipping-method-price">
+                  $5.99
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="summary-section-label shipping-addr-label multi-shipping">
+            Addresses &amp; shipping methods are listed under your items.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Step 2: Payment and Billing-->
+      <div class="card ghost payment">
+        <div class="card-header">
+          <span class="checkout-card-header">Payment</span>
+        </div>
+      </div>
+
+      <div class="card payment-form">
+        <div class="card-header">
+          <h4>Payment</h4>
+        </div>
+        <div class="card-block">
+          <form autocomplete="on" method="POST" action="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-SubmitPayment" name="dwfrm_billing"
+            id="dwfrm_billing">
+
+
+            <!-- Billing Address Selector                                             -->
+
+            <fieldset class="address-selector-block">
+              <div class="form-group">
+                <label class="form-control-label" for="shipmentSelector">
+                        Billing Address
+                    </label>
+                <a class="btn float-right toggle-shipping-address-form">Edit</a>
+
+                <select name="addressSelector" class="addressSelector form-control" data-create-shipment-url="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-SetBillingAddress">
+    <option value="new" data-first-name="" data-last-name="" data-address1="" data-address2="" data-city="" data-state-code="" data-country-code="" data-postal-code="" data-phone="">
+        Add New Address
+    </option>
+	
+    
+</select>
+
+
+                <div class="form-control-feedback"></div>
+              </div>
+            </fieldset>
+
+
+            <!-- Billing Address                                                      -->
+
+            <fieldset class="billing-address">
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_addressFields_firstName">
+                    <label class="form-control-label" for="billingFirstName">First Name</label>
+                    <input autofocus="" type="text" class="form-control billingFirstName" id="billingFirstName" name="dwfrm_billing_addressFields_firstName"
+                      required="" value="" maxlength="50" autocomplete="given-name">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_addressFields_lastName">
+                    <label class="form-control-label" for="billingLastName">Last Name</label>
+                    <input type="text" class="form-control billingLastName" id="billingLastName" name="dwfrm_billing_addressFields_lastName"
+                      required="" value="" maxlength="50" autocomplete="family-name">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group
+            required
+            dwfrm_billing_addressFields_address1">
+                    <label class="form-control-label" for="billingAddressOne">Address 1</label>
+                    <input type="text" class="form-control billingAddressOne" id="billingAddressOne" name="dwfrm_billing_addressFields_address1"
+                      required="" value="" maxlength="50" autocomplete="billing address-line1">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group dwfrm_billing_addressFields_address2">
+                    <label class="form-control-label" for="billingAddressTwo">Address 2</label>
+                    <input type="text" class="form-control billingAddressTwo" id="billingAddressTwo" name="dwfrm_billing_addressFields_address2"
+                      value="" maxlength="50" autocomplete="billing address-line2">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_addressFields_country">
+                    <label class="form-control-label" for="billingCountry">Country</label>
+                    <select class="form-control billingCountry" id="billingCountry" name="dwfrm_billing_addressFields_country" required="" value=""
+                      maxlength="2147483647" autocomplete="billing country">
+                    
+                        <option id="us">us</option>
+                    
+            </select>
+                    <div class="form-control-feedback"></div>
+
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_addressFields_states_stateCode">
+                    <label class="form-control-label" for="billingState">State</label>
+                    <select class="form-control billingState" id="billingState" name="dwfrm_billing_addressFields_states_stateCode" required=""
+                      value="" maxlength="2147483647" autocomplete="billing region">
+                    
+                        <option id=""></option>
+                    
+                        <option id="AL">AL</option>
+                    
+                        <option id="AK">AK</option>
+                    
+                        <option id="AS">AS</option>
+                    
+                        <option id="AZ">AZ</option>
+                    
+                        <option id="AR">AR</option>
+                    
+                        <option id="CA">CA</option>
+                    
+                        <option id="CO">CO</option>
+                    
+                        <option id="CT">CT</option>
+                    
+                        <option id="DE">DE</option>
+                    
+                        <option id="DC">DC</option>
+                    
+                        <option id="FL">FL</option>
+                    
+                        <option id="GA">GA</option>
+                    
+                        <option id="GU">GU</option>
+                    
+                        <option id="HI">HI</option>
+                    
+                        <option id="ID">ID</option>
+                    
+                        <option id="IL">IL</option>
+                    
+                        <option id="IN">IN</option>
+                    
+                        <option id="IA">IA</option>
+                    
+                        <option id="KS">KS</option>
+                    
+                        <option id="KY">KY</option>
+                    
+                        <option id="LA">LA</option>
+                    
+                        <option id="ME">ME</option>
+                    
+                        <option id="MD">MD</option>
+                    
+                        <option id="MA">MA</option>
+                    
+                        <option id="MI">MI</option>
+                    
+                        <option id="MN">MN</option>
+                    
+                        <option id="MS">MS</option>
+                    
+                        <option id="MO">MO</option>
+                    
+                        <option id="MT">MT</option>
+                    
+                        <option id="NE">NE</option>
+                    
+                        <option id="NV">NV</option>
+                    
+                        <option id="NH">NH</option>
+                    
+                        <option id="NJ">NJ</option>
+                    
+                        <option id="NM">NM</option>
+                    
+                        <option id="NY">NY</option>
+                    
+                        <option id="NC">NC</option>
+                    
+                        <option id="ND">ND</option>
+                    
+                        <option id="OH">OH</option>
+                    
+                        <option id="OK">OK</option>
+                    
+                        <option id="OR">OR</option>
+                    
+                        <option id="PA">PA</option>
+                    
+                        <option id="PR">PR</option>
+                    
+                        <option id="RI">RI</option>
+                    
+                        <option id="SC">SC</option>
+                    
+                        <option id="SD">SD</option>
+                    
+                        <option id="TN">TN</option>
+                    
+                        <option id="TX">TX</option>
+                    
+                        <option id="UT">UT</option>
+                    
+                        <option id="VT">VT</option>
+                    
+                        <option id="VI">VI</option>
+                    
+                        <option id="VA">VA</option>
+                    
+                        <option id="WA">WA</option>
+                    
+                        <option id="WV">WV</option>
+                    
+                        <option id="WI">WI</option>
+                    
+                        <option id="WY">WY</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AA">AA</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AE">AE</option>
+                    
+                        <option id="AP">AP</option>
+                    
+                        <option id="OTHER">OTHER</option>
+                    
+            </select>
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_addressFields_city">
+                    <label class="form-control-label" for="billingAddressCity">City</label>
+                    <input type="text" class="form-control billingAddressCity" id="billingAddressCity" name="dwfrm_billing_addressFields_city"
+                      required="" value="" maxlength="50" minlength="2" autocomplete="billing locality">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_addressFields_postalCode">
+                    <label class="form-control-label" for="billingZipCode">ZIP Code</label>
+                    <input type="text" class="form-control billingZipCode" id="billingZipCode" name="dwfrm_billing_addressFields_postalCode"
+                      required="" value="" maxlength="10" minlength="5" pattern="(^\d{5}(-\d{4})?$)|(^[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)"
+                      autocomplete="billing postal-code">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+
+
+            <!-- Payment Options                                                      -->
+
+            <fieldset>
+              <div class="row">
+
+                <div class="form-check form-group col-12 dwfrm_billing_paymentMethod">
+                  <label for="paymentOption-CREDIT_CARD" class="form-check-label">
+                
+                    <input id="paymentOption-CREDIT_CARD" name="dwfrm_billing_paymentMethod" type="radio" class="form-check-input" value="CREDIT_CARD" checked="">
+                    <img class="credit-option" src="//dev01-instore-dw.demandware.net/on/demandware.static/Sites-SiteGenesis-Site/-/default/dwf86ee69d/images/credit.png" height="32" alt="Credit Card" title="Credit Card">
+                    <span class="credit-card-selection" style="background-image: url('//dev01-instore-dw.demandware.net/on/demandware.static/Sites-SiteGenesis-Site/-/default/dw70671cc7/images/payment-types.png')"></span>
+                
+            </label>
+                  <div class="form-control-feedback"></div>
+                </div>
+
+              </div>
+
+            </fieldset>
+
+
+            <!-- credit Card Form                                                     -->
+
+            <fieldset class="credit-card-form">
+
+
+
+              <input type="hidden" class="form-control cardNumber" id="cardType" name="dwfrm_billing_creditCardFields_cardType" value="Visa">
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group
+            required
+            dwfrm_billing_creditCardFields_cardNumber">
+                    <label class="form-control-label" for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control cardNumber" id="cardNumber" name="dwfrm_billing_creditCardFields_cardNumber" required=""
+                      value="" maxlength="16" autocomplete="cc-number">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_creditCardFields_expirationMonth">
+                    <label class="form-control-label" for="expirationMonth">Expiration Month</label>
+                    <select class="form-control expirationMonth" id="expirationMonth" name="dwfrm_billing_creditCardFields_expirationMonth" required=""
+                      value="" autocomplete="cc-exp-month">
+                
+                    <option id="" value="">month</option>
+                
+                    <option id="01" value="1">01</option>
+                
+                    <option id="02" value="2">02</option>
+                
+                    <option id="03" value="3">03</option>
+                
+                    <option id="04" value="4">04</option>
+                
+                    <option id="05" value="5">05</option>
+                
+                    <option id="06" value="6">06</option>
+                
+                    <option id="07" value="7">07</option>
+                
+                    <option id="08" value="8">08</option>
+                
+                    <option id="09" value="9">09</option>
+                
+                    <option id="10" value="10">10</option>
+                
+                    <option id="11" value="11">11</option>
+                
+                    <option id="12" value="12">12</option>
+                
+            </select>
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_creditCardFields_expirationYear">
+                    <label class="form-control-label" for="expirationYear">Expiration Year</label>
+                    <select class="form-control expirationYear" id="expirationYear" name="dwfrm_billing_creditCardFields_expirationYear" required=""
+                      value="" autocomplete="cc-exp-year">
+                <option value="">year</option>
+                
+                    <option id="2017.0" value="2017.0">
+                    2017</option>
+                
+                    <option id="2018.0" value="2018.0">
+                    2018</option>
+                
+                    <option id="2019.0" value="2019.0">
+                    2019</option>
+                
+                    <option id="2020.0" value="2020.0">
+                    2020</option>
+                
+                    <option id="2021.0" value="2021.0">
+                    2021</option>
+                
+                    <option id="2022.0" value="2022.0">
+                    2022</option>
+                
+                    <option id="2023.0" value="2023.0">
+                    2023</option>
+                
+                    <option id="2024.0" value="2024.0">
+                    2024</option>
+                
+                    <option id="2025.0" value="2025.0">
+                    2025</option>
+                
+                    <option id="2026.0" value="2026.0">
+                    2026</option>
+                
+            </select>
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_creditCardFields_securityCode">
+                    <label class="form-control-label" for="securityCode">Security Code</label>
+                    <span class="info-icon">
+                <span class="icon">i</span>
+                    <div class="tooltip">
+                      Please enter the security (CVV) code on the back of your card.
+                    </div>
+                    </span>
+
+                    <input type="text" class="form-control securityCode" id="securityCode" name="dwfrm_billing_creditCardFields_securityCode"
+                      required="" value="" maxlength="3">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_creditCardFields_email">
+                    <label class="form-control-label" for="email">Email</label>
+                    <span class="info-icon">
+                <span class="icon">i</span>
+                    <div class="tooltip">
+                      Please enter a valid email address.
+                    </div>
+                    </span>
+                    <input type="text" class="form-control email" id="email" name="dwfrm_billing_creditCardFields_email" required="" value=""
+                      maxlength="254">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group
+            required
+            dwfrm_billing_creditCardFields_phone">
+                    <label class="form-control-label" for="phoneNumber">Phone Number</label>
+                    <span class="info-icon">
+                <span class="icon">i</span>
+                    <div class="tooltip">
+                      The phone number associated with this credit card.
+                    </div>
+                    </span>
+                    <input type="tel" class="form-control phone" id="phoneNumber" name="dwfrm_billing_creditCardFields_phone" required="" value=""
+                      maxlength="20">
+                    <div class="form-control-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="card payment-summary">
+        <div class="card-header clearfix">
+          <h4 class="pull-left">Payment</h4>
+          <span class="edit-button pull-right">Edit</span>
+        </div>
+
+        <div class="card-block">
+          <span class="summary-section-label billing-addr-label">Billing Address:</span><br>
+
+
+
+
+          <div class="summary-details billing">
+            <div class="address-summary">
+              <div>
+                <span class="firstName">
+		    
+		</span>
+                <span class="lastName">
+			
+	    </span>
+              </div>
+
+              <div class="address1">
+
+              </div>
+
+              <div class="address2">
+
+              </div>
+
+              <span class="city">
+	    
+	</span>
+              <span class="stateCode">
+	   
+	</span>
+              <span class="postalCode">
+	   
+	</span>
+            </div>
+
+            <span class="order-summary-email">null</span>
+            <br>
+
+            <span class="order-summary-phone"></span>
+
+          </div>
+
+
+          <div class="summary-details">
+            <span class="summary-section-label payment-info-label">Payment:</span><br>
+            <div class="payment-details">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Checkout Workflow Buttons -->
+
+      <div class="row">
+        <div class="col-12 next-step-button">
+          <div>
+            <button class="btn btn-primary btn-block submit-shipping" type="submit" name="submit" value="submit-shipping">
+                                Next: Payment
+                            </button>
+
+            <button class="btn btn-primary btn-block submit-payment" type="submit" name="submit" value="submit-payment">
+                                Next: Place Order
+                            </button>
+
+            <button class="btn btn-primary btn-block place-order" data-action="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Checkout-PlaceOrder"
+              type="submit" name="submit" value="place-order">Place Order
+                            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Order Totals, Details and Summary -->
+
+    <div class="col-sm-5">
+
+      <div class="card">
+        <div class="card-header">
+          <h4>Order Summary</h4>
+        </div>
+        <div class="card-block order-total-summary">
+
+          <div class="row leading-lines subtotal-item">
+            <div class="col-6 start-lines">
+              <p class="order-receipt-label"><span>Subtotal</span></p>
+            </div>
+            <div class="col-6 end-lines">
+              <p class="text-right"><span class="sub-total">$49.00</span></p>
+            </div>
+          </div>
+
+
+          <div class="row leading-lines order-discount hide-order-discount">
+            <div class="col-6 start-lines">
+              <p class="order-receipt-label"><span>Order Discount</span></p>
+            </div>
+            <div class="col-6 end-lines">
+              <p class="text-right"><span class="order-discount-total">- $0.00</span></p>
+            </div>
+          </div>
+
+
+          <div class="row leading-lines shipping-item">
+            <div class="col-6 start-lines">
+              <p class="order-receipt-label"><span>Shipping</span></p>
+            </div>
+            <div class="col-6 end-lines">
+              <p class="text-right"><span class="shipping-total-cost">$5.99</span></p>
+            </div>
+          </div>
+
+
+          <div class="row leading-lines shipping-discount hide-shipping-discount">
+            <div class="col-6 start-lines">
+              <p class="order-receipt-label"><span>Shipping Discount</span></p>
+            </div>
+            <div class="col-6 end-lines">
+              <p class="text-right"><span class="shipping-discount-total">- $0.00</span></p>
+            </div>
+          </div>
+
+
+          <div class="row leading-lines sales-tax-item">
+            <div class="col-6 start-lines">
+              <p class="order-receipt-label"><span>Sales Tax</span></p>
+            </div>
+            <div class="col-6 end-lines">
+              <p class="text-right"><span class="tax-total">$2.75</span></p>
+            </div>
+          </div>
+
+
+          <div class="row grand-total leading-lines">
+            <div class="col-6 start-lines">
+              <p class="order-receipt-label"><span>Total</span></p>
+            </div>
+            <div class="col-6 end-lines">
+              <p class="text-right"><span class="grand-total-sum">$57.74</span></p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="card order-product-summary">
+        <div class="card-block">
+          <div class="row leading-lines">
+            <div class="col-6 start-lines">
+              <span class="order-receipt-label grand-total-label">1 Items</span>
+            </div>
+            <div class="col-6 end-lines">
+              <span class="grand-total-price">$49.00</span>
+            </div>
+          </div>
+          <div class="product-summary-block">
+
+            <div class="shipment-block">
+
+              <div class="product-line-item" data-product-line-item="7ca578119f760cc5578cc3736c">
+                <div class="row product-line-item-name">
+
+                  <div class="col-lg-12 line-item-name">
+                    <span>Sleeveless Pleated Top.</span>
+                  </div>
+
+                </div>
+                <div class="row product-line-item-details">
+                  <div class="col-lg-12">
+                    <img class="product-image" src="//dev01-instore-dw.demandware.net/on/demandware.static/-/Sites-apparel-catalog/default/dwacbc7e08/images/small/PG.10251227.JJE86XX.PZ.jpg"
+                      alt="Sleeveless Pleated Top., New Coral, small" title="Sleeveless Pleated Top., New Coral">
+                    <div class="item-attributes">
+
+                      <p class="line-item-attributes">Color: New Coral</p>
+
+                      <p class="line-item-attributes">Size: S</p>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row line-item-price-quantity-info align-items-start">
+
+                  <div class="col-4 line-item-unit-price">
+                    <p class="line-item-pricing-info">
+                      <span class="line-item-total-text unit-price-label">
+                    Each
+                </span><br>
+
+                    </p>
+                    <div class="price">
+
+                      <span>
+    
+
+    
+
+    
+    <span class="sales">
+        <span class="value">$49.00</span>
+
+                      </span>
+                      </span>
+
+
+                    </div>
+
+                    <p></p>
+                  </div>
+
+                  <div class="col-4 line-item-quantity justify-content-center flex">
+
+                    <p class="line-item-pricing-info">
+                      <span class="line-item-total-text qty-card-quantity-label">
+    Quantity
+    </span><br>
+                      <span class="pricing qty-card-quantity-count">1</span>
+                    </p>
+
+                  </div>
+
+                  <div class="col-4 line-item-total-price justify-content-end">
+                    <p class="line-item-pricing-info">
+                      <span class="line-item-total-text line-item-total-price-label">
+                    Total
+                </span>
+                    </p>
+                    <div class="item-total-7ca578119f760cc5578cc3736c price">
+                      <div class="strike-through
+non-adjusted-price">
+                        null
+                      </div>
+                      <div class="pricing line-item-total-price-amount item-total-7ca578119f760cc5578cc3736c">$49.00</div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="multi-shipping" data-shipment-summary="16bb5d16fa8207dc4d3e429098">
+
+
+
+                <h5>Shipping Method</h5>
+                <p>
+                  <span class="display-name">Ground</span>
+
+                  <span class="text-muted arrival-time">(7-10 Business Days)</span>
+
+                </p>
+                <p>
+                  <span class="price">
+            $5.99
+            
+        </span>
+                </p>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

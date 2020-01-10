@@ -1,0 +1,19 @@
+{{#with category}}
+  <div class="hero slant-down search-banner" style="background-image: url({{c_slotBannerImage}})">
+    <h1 class="header page-title">
+      {{name}}
+    </h1>
+  </div>
+
+  <div class="category-slot" data-slot-id="landing-banner" data-slot-category-id="{{id}}">
+    {{> category/landingSlot}}
+  </div>
+
+  <div class="{{@root.app.containerClass}}">
+    <div class="secondary-content">
+      <div class="category-slot" data-slot-id="bottom-banner" data-slot-category-id="{{id}}">
+        {{> category/subcategories}}
+      </div>
+    </div>
+  </div>
+{{/with}}

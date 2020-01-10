@@ -1,0 +1,46 @@
+<div class="hero slant-down account-image">
+  <h1 class="page-title">Order Detail</h1>
+</div>
+
+<div class="container receipt">
+  <div class="row hidden-xs-down">
+    <div class="col">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="https://dev01-instore-dw.demandware.net/s/SiteGenesis/home?lang=en_US">
+            Home
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/s/SiteGenesis/account?lang=en_US">
+            My Account
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/s/SiteGenesis/orders?lang=en_US">Order History</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6">
+      <div class="card confirm-details">
+        <div class="card-header">
+          <h4>Receipt</h4>
+        </div>
+        {{> order/orderSummary}}
+      </div>
+
+      {{> order/productSummary}}
+
+      {{> order/totalsSummary}}
+
+      <div class="my-account">
+        <a href="{{ordersUrl}}" title="Back to Order History">
+          Back to Order History
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

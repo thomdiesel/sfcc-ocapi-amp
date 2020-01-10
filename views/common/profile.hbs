@@ -1,0 +1,113 @@
+<div class="hero slant-down account-image">
+  <h1 class="page-title">Profile</h1>
+</div>
+
+<div class="{{containerClass}}">
+  <div class="row hidden-xs-down">
+    <div class="col">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{homeUrl}}">
+            Home
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{{accountUrl}}">
+            My Account
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          Profile
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Edit Profile</h4>
+        </div>
+        {{#with customer}}
+          <div class="card-block">
+            <form action="{{profileUrl}}" class="" method="POST" name="edit-profile-form" id="dwfrm_profile">
+
+              <div class="form-group required">
+                <label class="form-control-label" for="firstName">
+                  First Name
+                </label>
+                <input type="text" class="form-control" id="firstName" value="{{first_name}}" name="dwfrm_profile_customer_firstname" required=""
+                  maxlength="50">
+                <div class="form-control-feedback"></div>
+              </div>
+
+              <div class="form-group required">
+                <label class="form-control-label" for="lastName">
+                  Last Name
+                </label>
+                <input type="text" class="form-control" id="lastName" value="{{last_name}}" name="dwfrm_profile_customer_lastname" required=""
+                  maxlength="50">
+                <div class="form-control-feedback"></div>
+              </div>
+
+              <div class="form-group required">
+                <label class="form-control-label" for="phone">
+                  Phone
+                </label>
+                <input type="text" class="form-control" id="phone" value="{{phone}}" name="dwfrm_profile_customer_phone" required="" maxlength="2147483647"
+                  pattern="^\(?([2-9][0-8][0-9])\)?[\-\. ]?([2-9][0-9]{2})[\-\. ]?([0-9]{4})(\s*x[0-9]+)?$">
+                <div class="form-control-feedback">
+
+                </div>
+              </div>
+
+              <div class="form-group required">
+                <label class="form-control-label" for="email">
+                  Email
+                </label>
+                <input type="email" class="form-control" id="email" value="{{email}}" name="dwfrm_profile_customer_email" required=""
+                  maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+                <div class="form-control-feedback"></div>
+              </div>
+
+              <div class="form-group required">
+                <label class="form-control-label" for="confirmEmail">
+                  Confirm Email
+                </label>
+                <input type="email" class="form-control" id="confirmEmail" name="dwfrm_profile_customer_emailconfirm" required="" value="{{email}}"
+                  maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+                <div class="form-control-feedback"></div>
+              </div>
+
+              <div class="form-group required">
+                <label class="form-control-label" for="password">
+                  Password
+                </label>
+                <input type="password" class="form-control" id="password" name="dwfrm_profile_login_password" required="" value="********" maxlength="255"
+                  minlength="8">
+                <div class="form-control-feedback"></div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <a href="{{accountUrl}}" class="btn btn-block btn-outline-primary">Cancel</a>
+                </div>
+
+                <div class="col">
+                  <button type="submit" name="save" class="btn btn-save btn-block btn-primary">Save</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col text-center">
+      <a href="{{accountUrl}}" class="profile-back-to-account-link">Back to My Account</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container-fluid hidden-xs-down compare-bar" data-max-slots="4.0" data-min-products-msg="Please select at least 2 products to compare">
+<form method="POST" name="compare-products" action="/s/SiteGenesis/compare?lang=en_US">
+  <div class="backdrop"></div>
+  <div class="row align-items-center">
+    <div class="col-8">
+      <div class="row align-items-center product-slots"></div>
+    </div>
+    <div class="col-2 action">
+      <button type="submit" class="compare btn btn-primary">Compare</button>
+    </div>
+    <div class="col-2 action">
+      <a href="" class="clear-all">Clear All</a>
+    </div>
+  </div>
+  <input type="hidden" name="cgid">
+  <input type="hidden" name="backUrl">
+</form>

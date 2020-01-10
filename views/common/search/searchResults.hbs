@@ -1,0 +1,77 @@
+<div class="row search-nav">
+</div>
+<div class="row">
+  <div class="tab-content col-12">
+    <div class="tab-pane {{containerClass}} active" id="product-search-results" role="tabpanel" aria-expanded="true">
+      <div class="row grid-header">
+        <div class="result-count col-12 col-md-9 col-sm-6 push-sm-3">
+          <span>
+            {{total}} Results
+          </span>
+        </div>
+
+        <div class="col-6 col-sm-3 pull-md-9 pull-sm-6">
+          {{> search/sortingOptions}}
+        </div>
+
+        <div class="col-6 col-sm-3 text-right hidden-md-up">
+          <button type="button" class="btn btn-primary filter-results col-12">
+            Filter
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="refinement-bar col-md-3">
+          <div class="filter-header">
+            <div class="header-bar hidden-md-up clearfix">
+              <div class="pull-left hidden-md-up result-count">
+                <span>
+                  {{total}} Results
+                </span>
+              </div>
+              <button class="pull-right close">
+                <span>Close</span>
+                <i class="fa fa-close"></i>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="secondary-bar col-12 offset-sm-4 offset-md-0 col-sm-4 col-md-12">
+              <a class="reset btn btn-block btn-outline-primary" href="{{clearAllRefinementValuesUrl}}">
+                Reset
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="refinements">
+              {{#each refinements}}
+                {{#if (eq attribute_id 'cgid')}}
+                  {{> search/categoryRefinement}}
+                {{else if (eq attribute_id 'c_refinementColor')}}
+                  {{> search/colorRefinement}}
+                {{else if (eq attribute_id 'price')}}
+                  {{> search/priceRefinement}}
+                {{else}}
+                  {{> search/searchRefinement}}
+                {{/if}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <div class="{{containerClass}}">
+            {{> search/productGrid}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane {{containerClass}}" id="content-search-results-pane" role="tabpanel" aria-expanded="false">
+      <div id="content-search-results" class="row content-grid-header justify-content-center"></div>
+    </div>
+  </div>
+</div>
+</div>

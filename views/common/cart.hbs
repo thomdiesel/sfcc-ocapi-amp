@@ -1,0 +1,263 @@
+{{#if (and basket basket.product_items)}}
+  {{#with basket}}
+    <div class="container">
+      <h1 class="page-title">Your Cart</h1>
+      <div class="row cart-header">
+        <div class="col-sm-4 hidden-xs-down">
+          <a class="continue-shopping-link" href="{{homeUrl}}" title="Continue Shopping">
+              Continue Shopping
+            </a>
+        </div>
+        <div class="col-sm-3 text-center">
+          <h5 class="number-of-items">{{product_items.length}} Items</h5>
+        </div>
+        <div class="col-sm-5 text-right hidden-xs-down">
+          <div>
+            <span>Need Help? Call</span>
+            <span><a class="help-phone-number" href="tel:1-800-555-0199">1-800-555-0199</a></span>
+          </div>
+        </div>
+      </div>
+      <hr class="no-margin-top">
+    </div>
+
+    <div class="container cart">
+      <div class="row">
+        <div class="col-sm-7 col-md-8">
+          {{#each product_items}}
+            <div class="card product-info uuid-{{item_id}}">
+              <!--product name-->
+              <div class="row">
+                <div class="line-item-name col-10">
+                  <span>{{product_name}}</span>
+                </div>
+                <div class="col-2 remove-line-item hidden-lg-up">
+                  <button href="/home" class="remove-btn remove-product">
+                        <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="hidden-md-down">
+                  <a href="{{deleteProductUrl ../basket_id item_id}}" class="remove-btn-lg remove-product">
+                        <span aria-hidden="true">×</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-5">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <img class="product-image" src="{{smallImageUrl this this.variation_values}}"
+                        alt="{{item_text}}, New Coral, small" title="{{item_text}}, New Coral">
+                      <div class="item-attributes">
+                        {{#if variation_values.color}}<p class="line-item-attributes">Color: {{variation_values.color}}</p>{{/if}}
+                        <div class="hidden-xs-down edit-add-to-wishlist">
+                          <a href="#" class="edit" title="Edit">Edit</a>
+                          <a href="#" class="add-to-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-7">
+                  <hr class="hidden-lg-up line-item-divider">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="row">
+                        <div class="col-12">
+                          <p class="line-item-price-info">Each</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="price">
+                            <span>
+                                  <span class="sales">
+                                    <span class="value">{{formatCurrency base_price ../currency}}</span>
+                            </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-4 col-lg-3">
+                      <div class="row">
+                        <div class="col-12">
+                          <p class="line-item-price-info">Quantity</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 quantity-form">
+                          <span>{{quantity}}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <div class="row">
+                        <div class="col-12">
+                          <p class="line-item-price-info">Total</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 item-total-{{item_id}} price">
+                          <div class="strike-through non-adjusted-price">
+                          </div>
+                          <div class="pricing line-item-total-price-amount item-total-{{item_id}}">{{formatCurrency price ../currency}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div>
+                  </div>
+                  <div class="line-item-promo item-{{item_id}}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+          <div class="approaching-discounts">
+          </div>
+        </div>
+
+        <div class="col-sm-5 col-md-4 totals">
+          <div class="row">
+            <div class="col-12 hidden-sm-up">
+              <p class="optional-promo">Enter promo code (optional)</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <form action="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Cart-AddCoupon" class="promo-code-form" method="GET" name="promo-code-form">
+                <div class="form-group">
+                  <label for="couponCode">Enter Promo Code</label>
+                  <div class="row">
+                    <div class="col-7">
+                      <input type="text" class="form-control coupon-code-field" id="couponCode" name="couponCode" placeholder="Promo Code">
+                    </div>
+                    <div class="col-5 promo-code-submit">
+                      <button type="submit" class="btn btn-primary btn-block promo-code-btn">
+                          Submit
+                        </button>
+                    </div>
+                  </div>
+                  <div class="form-control-feedback coupon-error">
+                    <span class="coupon-missing-error">No coupon code entered</span>
+                    <span class="coupon-error-message"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="coupons-and-promos">
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              {{#each shipments}} {{#if @first}} {{#with shippingMethod}}
+                <div class="form-group">
+                  <label for="shippingMethods">Shipping</label>
+                  <select class="custom-select form-control shippingMethods" id="shippingMethods" name="shippingMethods" data-actionurl="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Cart-SelectShippingMethod">
+                    <option {{#if (eq id '001')}}selected{{/if}} data-shipping-id="001">Ground ( 7-10 Business Days )</option>
+                    <option {{#if (eq id '002')}}selected{{/if}} data-shipping-id="002">2-Day Express ( 2 Business Days )</option>
+                    <option {{#if (eq id '003')}}selected{{/if}} data-shipping-id="003">Overnight ( Next Day )</option>
+                    <option {{#if (eq id '005')}}selected{{/if}} data-shipping-id="005">Store Pickup </option>
+                    <option {{#if (eq id '012')}}selected{{/if}} data-shipping-id="012">Express ( 2-3 Business Days )</option>
+                    <option {{#if (eq id '021')}}selected{{/if}} data-shipping-id="021">USPS ( 7-10 Business Days )</option>
+                  </select>
+                </div>
+              {{/with}} {{/if}} {{/each}}
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <p>Shipping cost</p>
+            </div>
+            <div class="col-4">
+              <p class="text-right shipping-cost">{{formatCurrency shipping_total currency}}</p>
+            </div>
+          </div>
+
+          <div class="row shipping-discount hide-shipping-discount">
+            <div class="col-8">
+              <p>Shipping Discount</p>
+            </div>
+            <div class="col-4">
+              <p class="text-right shipping-discount-total">- $0.00</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+              <p>Sales Tax</p>
+            </div>
+            <div class="col-4">
+              <p class="text-right tax-total">{{formatCurrency tax_total currency}}</p>
+            </div>
+          </div>
+
+
+          <div class="row order-discount hide-order-discount">
+            <div class="col-8">
+              <p>Order Discount</p>
+            </div>
+            <div class="col-4">
+              <p class="text-right order-discount-total"> - $0.00</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+              <strong>Estimated Total</strong>
+            </div>
+            <div class="col-4">
+              <p class="text-right grand-total">{{formatCurrency order_total currency}}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 checkout-continue">
+              <div>
+                <a href="/checkout" class="btn btn-primary btn-block checkout-btn" role="button" aria-pressed="true">
+                  Checkout
+                </a>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+{{else}}
+  <div class="container">
+    <h1 class="page-title">Your Cart</h1>
+    <div class="row cart-header">
+      <div class="col-sm-4 hidden-xs-down">
+        <a class="continue-shopping-link" href="/s/SiteGenesis/home?lang=en_US" title="Continue Shopping">
+          Continue Shopping
+        </a>
+      </div>
+      <div class="col-sm-3 text-center">
+        <h5 class="number-of-items">0 Items</h5>
+      </div>
+      <div class="col-sm-5 text-right hidden-xs-down">
+        <div>
+          <span>Need Help? Call</span>
+          <span><a class="help-phone-number" href="tel:1-800-555-0199">1-800-555-0199</a></span>
+        </div>
+      </div>
+    </div>
+    <hr class="no-margin-top">
+  </div>
+  <div class="container cart-empty">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>Your Shopping Cart is Empty</h1>
+      </div>
+    </div>
+  </div>
+{{/if}}

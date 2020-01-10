@@ -1,0 +1,90 @@
+<nav role="navigation">
+  <div class="header container">
+    <div class="row">
+      <div class="col-12">
+        <div class="navbar-header brand">
+          <a href="{{homeUrl}}" title="Demandware SiteGenesis Home">
+            <img class="hidden-md-down" src="/images/logo.svg" alt="Demandware SiteGenesis">
+            <img class="hidden-lg-up" src="/images/logo-small.svg" alt="Demandware SiteGenesis">
+          </a>
+        </div>
+        <div class="navbar-header">
+          <div class="pull-left">
+            <div class="hidden-sm-down">
+              <div class="user">
+                {{#if (eq customer.auth_type 'guest')}}
+                  <a href="{{loginUrl}}">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    <span class="user-message">Login</span>
+                  </a>
+                {{else if (eq customer.auth_type 'registered')}}
+                  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                  <span class="user-message">{{customer.first_name}}</span>
+                  <div class="popover popover-bottom">
+                    <a href="{{accountUrl}}">My Account</a>
+                    <a href="{{logoutUrl}}">Logout</a>
+                  </div>
+                {{/if}}
+              </div>
+            </div>
+            <button class="navbar-toggler hidden-md-up" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                ☰ <span class="hidden-xs-down">Menu</span>
+            </button>
+          </div>
+          <div class="pull-right">
+            <div class="search hidden-xs-down">
+              <div class="site-search">
+                <form role="search" action="{{productSearchUrl}}" method="get" name="simpleSearch">
+                  <span class="fa fa-search"></span>
+                  <input class="form-control search-field" type="search" name="q" value="" placeholder="Search (keywords,etc)" autocomplete="off"
+                    aria-label="Search (keywords,etc)">
+                  <div class="suggestions-wrapper" data-url="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Search-GetSuggestions?q="></div>
+                  <input type="hidden" name="lang" value="en-US">
+                </form>
+              </div>
+              <div class="search-button">
+                <i class="fa fa-search"></i>
+              </div>
+
+            </div>
+            <div class="mini-cart" data-action-url="{{cartUrl}}">
+              <div class="mini-cart-total">
+                <a class="mini-cart-link" href="{{cartUrl}}" title="View Cart">
+                  <i class="minicart-icon fa fa-shopping-bag"></i>
+                  {{#with basket}}
+                    <span class="minicart-quantity">
+                      {{#if product_items}}{{product_items.length}}{{else}}0{{/if}}
+                    </span>
+                  {{/with}}
+                </a>
+              </div>
+              <div class="popover popover-bottom"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown" id="sg-navbar-collapse">
+    <div class="container">
+      <div class="row">
+        {{> navigation}}
+      </div>
+    </div>
+  </div>
+  <div class="search-mobile hidden-sm-up">
+    <div class="site-search">
+      <form role="search" action="/productSearch?lang=en_US" method="get" name="simpleSearch">
+        <span class="fa fa-search"></span>
+        <input class="form-control search-field" type="search" name="q" value="" placeholder="Search (keywords,etc)" autocomplete="off"
+          aria-label="Search (keywords,etc)">
+        <div class="suggestions-wrapper" data-url="/on/demandware.store/Sites-SiteGenesis-Site/en_US/Search-GetSuggestions?q="></div>
+        <input type="hidden" value="en_US" name="lang">
+      </form>
+    </div>
+    <div class="search-button">
+      <i class="fa fa-search"></i>
+    </div>
+
+  </div>
+</nav>

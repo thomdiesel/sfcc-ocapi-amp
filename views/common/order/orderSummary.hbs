@@ -1,0 +1,66 @@
+<div class="card-block">
+  <p>
+    <span class="summary-section-label order-number-label">Order Number:</span>
+    <span class="summary-details order-number">{{order_no}}</span>
+    <br>
+    <span class="summary-section-label order-date-label">Order Date:</span>
+    <span class="summary-details order-date">{{creation_date}}</span>
+  </p>
+
+  {{#if (eq shipments.length 1)}}
+    <div class="single-shipping" data-shipment-summary="0bcc08aaf1f34addb739f489f5">
+    </div>
+
+    <div class="single-shipping" data-shipment-summary="2d10a62623e2859afdec48cb95">
+    </div>
+  {{/if}}
+
+  {{#if (gt shipments.length 1)}}
+    <p class="summary-section-label shipping-addr-label multi-shipping">
+      Addresses &amp; shipping methods are listed under your items.
+    </p>
+  {{/if}}
+
+  <span class="summary-section-label billing-addr-label">Billing Address:</span><br>
+  <div class="summary-details billing">
+    {{#with billing_address}}
+      <div class="address-summary">
+        <div>
+          <span class="firstName">{{first_name}}</span>
+          <span class="lastName">{{last_name}}</span>
+        </div>
+        <div class="address1">
+          {{address1}}
+        </div>
+        <div class="address2">
+          {{address2}}
+        </div>
+        <span class="city">{{city}},</span>
+        <span class="stateCode">{{state_code}}</span>
+        <span class="postalCode">{{postal_code}}</span>
+      </div>
+      <span class="order-summary-email">{{../customer_info.email}}</span>
+      <br>
+      <span class="order-summary-phone">{{phone}}</span>
+    </div>
+  {{/with}}
+
+  <div class="summary-details">
+    <span class="summary-section-label payment-info-label">Payment:</span><br>
+    {{#each payment_instruments}}
+      <div class="payment-details">
+        {{#with payment_card}}
+          <div class="credit-card-type">
+            <span>{{paymentType ../payment_method_id}} {{card_type}}</span>
+          </div>
+          <div class="credit-card-number">
+            {{masked_number}}
+          </div>
+          <div class="credit-card-expiration-date">
+            <span>Expires {{expiration_month}}/{{expiration_year}}</span>
+          </div>
+        {{/with}}
+      </div>
+    {{/each}}
+  </div>
+</div>

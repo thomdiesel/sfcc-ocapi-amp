@@ -1,0 +1,11 @@
+@import "../variables";
+@import "../lib/bootstrap/variables";
+@import "../lib/bootstrap/mixins/breakpoints";
+@import "account";
+
+.profile-back-to-account-link {
+    color: $brand-color;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,34 @@
+{{#with category}}
+  <div class="hero slant-down search-banner" style="background-image: url({{image}})">
+    <h1 class="header page-title">
+      {{name}}
+    </h1>
+  </div>
+
+  {{#if categories}}
+    <div class="category-slot" data-slot-id="landing-banner" data-slot-category-id="{{id}}">
+      {{> category/landingSlot}}
+    </div>
+
+    <div class="container">
+      {{{categoryBreadcrumb}}}
+    </div>
+
+    <div id="sub-categories" class="{{containerClass}}">
+      <div class="secondary-content">
+        <div class="category-slot" data-slot-id="bottom-banner" data-slot-category-id="{{id}}">
+          {{> category/subcategories}}
+        </div>
+      </div>
+    </div>
+    <h3 class="container">
+      Search {{name}}
+    </h3>
+  {{/if}}
+{{/with}}
+
+{{#with search}}
+  <div class="{{containerClass}}">
+    {{> search/searchResults}}
+  </div>
+{{/with}}

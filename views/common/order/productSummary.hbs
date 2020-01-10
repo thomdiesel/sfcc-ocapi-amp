@@ -1,0 +1,105 @@
+<div class="card order-product-summary">
+  <div class="card-block">
+    <div class="row leading-lines">
+      <div class="col-6 start-lines">
+        <span class="order-receipt-label grand-total-label">{{product_items.length}} Items</span>
+      </div>
+      <div class="col-6 end-lines">
+        <span class="grand-total-price">{{formatCurrency order_total currency}}</span>
+      </div>
+    </div>
+    <div class="product-summary-block">
+      {{#each shipments}}
+        <div class="shipment-block">
+          {{#each ../product_items}}
+            {{#if (eq shipment_id ../shipment_id)}}
+              <div class="product-line-item" data-product-line-item="{{item_id}}">
+                <div class="line-item-header">
+                  <div class="line-item-name">
+                    <span>{{item_text}}</span>
+                  </div>
+                </div>
+                <div class="product-line-item-details">
+                  <img class="product-image" src="{{staticCatalogUrl '/images/small/PG.79942035.JJB84A0.PZ.jpg'}}"
+                    alt="{{item_text}}, Gold, small" title="{{item_text}}, Gold">
+                  <div class="item-attributes">
+                    <p class="line-item-attributes">Color: Gold</p>
+                  </div>
+                </div>
+                <div>
+                  <hr class="line-item-divider">
+                </div>
+                <div class="row align-items-start">
+                  <div class="col-4 line-item-unit-price">
+                    <p class="line-item-pricing-info">
+                      <span class="line-item-total-text unit-price-label">
+                        Each
+                      </span><br>
+                    </p>
+                    <div class="price">
+                      <span>
+                        <span class="sales">
+                          <span class="value">{{formatCurrency base_price}}</span>
+                        </span>
+                      </span>
+                    </div>
+                    <p></p>
+                  </div>
+                  <div class="col-4 line-item-quantity justify-content-center flex">
+                    <p class="line-item-pricing-info">
+                      <span class="line-item-total-text qty-card-quantity-label">
+                        Quantity
+                      </span><br>
+                      <span class="pricing qty-card-quantity-count">{{quantity}}</span>
+                    </p>
+                  </div>
+                  <div class="col-4 line-item-total-price justify-content-end">
+                    <p class="line-item-pricing-info">
+                      <span class="line-item-total-text line-item-total-price-label">
+                        Total
+                      </span>
+                    </p>
+                    <div class="item-total-{{item_id}} price">
+                      <div class="strike-through non-adjusted-price">
+                        {{formatCurrency price_after_item_discount ../../currency}}
+                      </div>
+                      <div class="pricing line-item-total-price-amount item-total-{{item_id}}">
+                        {{formatCurrency price_after_order_discount ../../currency}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/if}}
+          {{/each}}
+
+          {{#with shipping_address}}
+            <h5>Shipping To</h5>
+            <p>
+              <span class="ship-to-name">{{full_name}}</span>
+              <span class="ship-to-address1">{{address1}}</span>
+              {{#if address2}}
+                <span class="ship-to-address2">{{address2}}</span>
+              {{/if}}
+              <span class="ship-to-city-st-zip">{{city}}, {{state_code}} {{postal_code}}</span>
+              <span class="ship-to-phone">{{phone}}</span>
+            </p>
+          {{/with}}
+
+          {{#with shipping_method}}
+            <h5>Shipping Method</h5>
+            <p>
+              <span class="display-name">{{name}}</span>
+              {{#if c_estimatedArrivalTime}}
+                <span class="text-muted arrival-time">({{c_estimatedArrivalTime}})</span>
+              {{/if}}
+            </p>
+            <p>
+              <span class="price">{{formatCurrency shipping_total ../../currency}}</span>
+            </p>
+          {{/with}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

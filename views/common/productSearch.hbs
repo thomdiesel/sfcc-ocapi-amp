@@ -1,0 +1,18 @@
+{{#with category}}
+  <div class="hero slant-down search-banner"
+    {{#if (eq parent_category_id 'root')}}
+      style="background-image: url({{c_slotBannerImage}})"
+    {{else}}
+      style="background-image: url({{image}})"
+    {{/if}}>
+    <h1 class="header page-title">       
+      Search{{#if (neq id 'root')}} - {{name}}{{/if}}
+    </h1>
+  </div>
+{{/with}}
+
+{{#with search}}
+  <div class="{{containerClass}} search-results">
+    {{> search/searchResults}}
+  </div>
+{{/with}}

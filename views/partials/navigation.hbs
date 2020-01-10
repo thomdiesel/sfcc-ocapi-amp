@@ -1,0 +1,55 @@
+<nav class="navbar bg-inverse col-12">
+  <div class="close-menu clearfix">
+    <div class="back pull-left" role="button">
+      <a href="#">
+        <span class="caret-left"></span> Back
+      </a>
+    </div>
+    <div class="close-button pull-right" role="button">
+      <a href="#">
+        Close
+        <span aria-hidden="true">×</span>
+    </a>
+    </div>
+  </div>
+  <div aria-label="Main menu" role="navigation">
+    <ul class="nav navbar-nav">
+      {{#each app.root.categories}}
+        {{#if categories}}
+          <li class="nav-item dropdown" role="button">
+            <a href="{{categoryUrl id}}" id="{{id}}" class="nav-link dropdown-toggle"
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{name}}</a>
+
+            <ul class="dropdown-menu" role="menu" aria-hidden="true">
+              {{#each categories}}
+                <li class="dropdown-item" role="button">
+                  <a href="{{categoryUrl id}}" id="{{id}}" role="button"
+                    class="dropdown-link">{{name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </li>
+        {{else}}
+          <li class="nav-item" role="button">
+            <a href="{{categoryUrl id}}"
+              id="top-seller" role="button" class="nav-link">{{name}}</a>
+          </li>
+        {{/if}}
+      {{/each}}
+      <li class="nav-item hidden-md-up dropdown" role="button">
+        <span class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+          <i class="fa fa-sign-in" aria-hidden="true"></i>
+          <span class="user-message">Peter</span>
+        </span>
+        <ul class="dropdown-menu" role="menu" aria-hidden="true">
+          <li class="dropdown-item" role="button">
+            <a href="{{accountUrl}}" class="dropdown-link" role="button">My Account</a>
+          </li>
+          <li class="dropdown-item" role="button">
+            <a href="{{logoutUrl}}" class="dropdown-link" role="button">Logout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

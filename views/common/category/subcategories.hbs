@@ -1,0 +1,18 @@
+<h2>
+
+</h2>
+
+<div class="row">
+  {{#each categories}}
+    <div class="col-sm-6 col-md-4 category-item">
+      <a href="{{categoryUrl id}}" title="{{name}}">
+        <div class="category-tile">
+          <img class="img-fluid" src="{{image}}" alt="{{name}}">
+          <h3>
+            {{name}}
+          </h3>
+        </div>
+      </a>
+    </div>
+  {{/each}}
+</div>

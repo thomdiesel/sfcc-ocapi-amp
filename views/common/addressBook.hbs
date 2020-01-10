@@ -1,0 +1,67 @@
+<div class="hero slant-down account-image">
+  <h1 class="page-title">Address Book</h1>
+</div>
+
+<div class="{{containerClass}}">
+  <div class="row hidden-xs-down">
+    <div class="col">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{homeUrl}}">
+            Home
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{{accountUrl}}">
+            My Account
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          Address Book
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Rows for addresses in the Address Book -->
+  {{#each customer.addresses}}
+    <div class="row justify-content-center" id="abid-{{address_id}}">
+      <div class="col-sm-8 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="address-heading pull-left">{{address_id}} {{#if preferred}}(Default Address){{/if}}</h4>
+            <a href="" class="pull-right">Edit</a>
+          </div>
+          <div class="card-block card-block-positioning">
+            <div>{{full_name}}</div>
+            <div>{{address1}}</div>
+            {{#if address2}}
+              <div>{{address2}}</div>
+            {{/if}}
+            <div>{{city}}, {{state_code}} {{postal_code}}</div>
+            <div>{{phone}}</div>
+            <button type="button" class="remove-btn remove-address" data-toggle="modal" data-target="#deleteAddressModal" data-id="Home"
+              data-url="" data-default="true">
+              ×
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="row">
+        <div class="col text-center">
+          <a href="{{accountUrl}}" class="normal">
+            Back to My Account
+          </a>
+        </div>
+        <div class="col">
+          <a href="" class="btn btn-save btn-block btn-primary">Add New</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

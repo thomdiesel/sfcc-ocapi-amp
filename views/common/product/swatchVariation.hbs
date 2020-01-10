@@ -1,0 +1,15 @@
+<div class="attribute">
+  <!-- Select <Attribute> Label -->
+  <label class="{{id}}">
+    Select {{name}}
+  </label>
+
+  {{#each values}}
+    <!-- Circular Swatch Image Attribute Values -->
+    <a href="{{productUrl @root.product.id}}&dwvar_{{@root.product.id}}_{{../id}}={{value}}">
+      <span data-attr-value="{{value}}"class="color-value swatch-circle swatch-value"
+        style="background-image: url({{swatchImageUrl @root.product value 0}})">
+      </span>
+    </a>
+  {{/each}}
+</div>

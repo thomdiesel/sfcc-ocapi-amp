@@ -1,0 +1,20 @@
+{
+    "hooks": [
+        {
+            "name": "dw.order.calculate",
+            "script": "./cartridge/scripts/hooks/cart/calculate.js"
+        },
+        {
+            "name": "dw.order.calculateShipping",
+            "script": "./cartridge/scripts/hooks/cart/calculate.js"
+        },
+        {
+            "name": "dw.order.calculateTax",
+            "script": "./cartridge/scripts/hooks/cart/calculate.js"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.items.afterPOST",
+            "script": "./cartridge/scripts/hooks/ocapi/addProduct.js"
+        }
+    ]
+}

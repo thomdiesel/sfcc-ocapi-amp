@@ -1,0 +1,106 @@
+<div class="hero slant-down account-image">
+  <h1 class="page-title">Order History</h1>
+</div>
+
+<div class="{{containerClass}}">
+  <div class="row hidden-xs-down">
+    <div class="col">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{homeUrl}}">
+            Home
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{{accountUrl}}">
+            My Account
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          Order History
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4 col-md-3">
+      <h4>Order History</h4>
+    </div>
+    <div class="col-12 col-sm-4 col-md-3">
+      <div class="form-group">
+        <select class="form-control custom-select order-history-select">
+          <option value="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Order-Filtered?orderFilter=6">
+            Last Six Months
+          </option>
+          <option value="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Order-Filtered?orderFilter=12">
+            Last Twelve Months
+          </option>
+          <option value="https://dev01-instore-dw.demandware.net/on/demandware.store/Sites-SiteGenesis-Site/en_US/Order-Filtered?orderFilter=2017">
+            2017
+          </option>         
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    {{#with order_history}}
+      <div class="container order-list-container">
+        {{#each data}}
+          <div class="row">
+            <div class="col-xs-12 col-lg-6 offset-lg-3">
+              <div class="card">
+                <div class="card-header clearfix">
+                  <h4 class="pull-left">Order No. {{order_no}}</h4>
+                  <a href="{{accountOrderUrl order_token}}" class="pull-right">View</a>
+                </div>
+                <div class="card-block card-info-group">
+                  <div class="row">
+                    <div class="col-4 hidden-xs-down">
+                      {{#each product_items}}
+                        <img class="img-fluid" src="{{staticCatalogUrl '/images/small/PG.15J0037EJ.SLABLFB.PZ.jpg'}}"
+                          alt="{{item_text}}, Slate, small" title="{{item_text}}, Slate">
+                      {{/each}}
+                    </div>
+                    <div class="col-sm-8 col-12">
+                      <p>Date Ordered: {{creation_date}}</p>
+                      <p>Order Status: <span class="dashboard-order-card-status">{{status}}</span></p>
+                      {{#each shipments}}
+                        <p>Shipped to: {{shipping_address.full_name}}</p>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col-9 dashboard-order-card-footer-columns card-info-group">
+                      <p>Total items</p>
+                      <p class="dashboard-order-card-footer-value">
+                        {{product_items.length}}
+                      </p>
+                    </div>
+                    <div class="col-3 dashboard-order-card-footer-columns card-info-group">
+                      <p>Total </p>
+                      <p class="dashboard-order-card-footer-value">
+                        {{formatCurrency order_total currency}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/with}}
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6 text-center">
+      <a href="{{accountUrl}}" class="normal">
+        Back to My Account
+      </a>
+    </div>
+  </div>
+</div>
