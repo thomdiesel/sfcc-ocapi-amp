@@ -36,8 +36,12 @@ const proxy = httpProxy.createProxyServer({
 
 // Build out the site and catalog root urls
 const siteUrl = `${targetUrl}/site?client_id=${process.env.OCAPI_CLIENT_ID}`;
+console.log(`Site URL: ${siteUrl}`);
 const rootCatUrl = `${targetUrl}/categories/root?client_id=${process.env.OCAPI_CLIENT_ID}&levels=2`;
+console.log(`Root Cat  Url: ${rootCatUrl}`);
 const authUrl = `${targetUrl}/customers/auth?client_id=${process.env.OCAPI_CLIENT_ID}`;
+console.log(`Auth Url: ${authUrl}`);
+
 
 /**
  * Controllers (route handlers).
@@ -157,14 +161,14 @@ app.use((req, res, next) => {
             res.flash('Unable to login');
             return res.redirect('/login');
           }
-    
+
           const auth = JSON.parse(body);
           const bearerToken = response.headers.authorization;
-    
+
           req.user = req.session.user = auth;
           req.basket = req.session.basket = null;
           req.session.bearerToken = bearerToken;
-    
+
           console.log('-------------- guest user auth --------------');
         });
       } else {
